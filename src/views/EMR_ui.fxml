@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="emrPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AppController">
+   <top>
+      <VBox prefHeight="65.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="menuOpen" mnemonicParsing="false" onAction="#openMenuClicked" text="Open" />
+                        <MenuItem fx:id="menuSave" mnemonicParsing="false" onAction="#saveMenuClicked" text="Save" />
+                    	<MenuItem fx:id="menuQuit" mnemonicParsing="false" onAction="#quitMenuClicked" text="Quit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="menuUndo" mnemonicParsing="false" onAction="#undoMenuClicked" text="Undo" />
+                    <MenuItem fx:id="menuRedo" mnemonicParsing="false" onAction="#redoMenuClicked" text="Redo" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#aboutMenuClicked" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                <Button mnemonicParsing="false" onAction="#dessinModeClicked" style="-fx-background-color: ADD8E6;" text="Mode Dessin" />
+                  <Button mnemonicParsing="false" onAction="#connexionModeClicked" style="-fx-background-color: ADD8E6;" text="Mode Connexion" />
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="250.0" prefWidth="100.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseDrag" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" />
+            <Circle fx:id="emrCircle" fill="GOLD" onMouseReleased="#circleMouseDrag" radius="20.0" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" />
+            <Rectangle fx:id="emrSquare" arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="40.0" onMouseReleased="#rectMouseDrag" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" width="40.0" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: E5E5E5;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="statusBar" alignment="CENTER" text="Ceci est la status bar contenue dans un label">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
