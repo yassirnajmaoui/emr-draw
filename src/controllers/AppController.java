@@ -1,9 +1,13 @@
 package controllers;
 
+import java.awt.Color;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.Circle;
@@ -19,6 +23,7 @@ public class AppController {
 	static EMRMode mode;
 	public static EMRMode getMode()
 	{
+		if(mode == null) mode = new EMRModeDessin();
 		return mode;
 	}
 
@@ -31,19 +36,46 @@ public class AppController {
 	@FXML
 	public Label statusBar;
 	@FXML
+	public Button connexionBtn;
+	@FXML
+	public Button dessinBtn;
+	@FXML
 	public BorderPane emrPane;
 
+	public void addNode(Node n)
+	{
+		emrPane.getChildren().add(n);
+	}
+	
 	@FXML
 	public void circleMouseDrag(MouseEvent e) {
-		emrPane.getChildren().add(EMRShapeFactory.createCircle(e.getSceneX(), e.getSceneY()));
+		addNode(EMRShapeFactory.createCircle(e.getSceneX(), e.getSceneY(),this));
 	}
 	@FXML
 	public void rectMouseDrag(MouseEvent e) {
-		emrPane.getChildren().add(EMRShapeFactory.createRect(e.getSceneX(), e.getSceneY()));
+		addNode(EMRShapeFactory.createRect(e.getSceneX(), e.getSceneY(),this));
 	}
 	@FXML
 	public void ellipseMouseDrag(MouseEvent e) {
-		emrPane.getChildren().add(EMRShapeFactory.createEllipse(e.getSceneX(), e.getSceneY()));
+		addNode(EMRShapeFactory.createEllipse(e.getSceneX(), e.getSceneY(),this));
+	}
+	
+	@FXML
+	public void connexionModeClicked(ActionEvent e) {
+		System.out.println("Mode Connexion clicked");
+		statusBar.setText("Mode Connexion clicked");
+		connexionBtn.setStyle("-fx-background-color:white");
+		dessinBtn.setStyle("-fx-background-color:gray");
+		mode = new EMRModeConnexion();
+	}
+
+	@FXML
+	public void dessinModeClicked(ActionEvent e) {
+		System.out.println("Mode Dessin clicked");
+		statusBar.setText("Mode Dessin clicked");
+		dessinBtn.setStyle("-fx-background-color:white");
+		connexionBtn.setStyle("-fx-background-color:gray");
+		mode = new EMRModeDessin();
 	}
 	
 	@FXML
@@ -80,20 +112,6 @@ public class AppController {
 	public void aboutMenuClicked(ActionEvent e) {
 		System.out.println("Menu Help-About clicked");
 		statusBar.setText("Menu Help-About clicked");
-	}
-
-	@FXML
-	public void connexionModeClicked(ActionEvent e) {
-		System.out.println("Mode Connexion clicked");
-		statusBar.setText("Mode Connexion clicked");
-		mode = new EMRModeConnexion();
-	}
-
-	@FXML
-	public void dessinModeClicked(ActionEvent e) {
-		System.out.println("Mode Dessin clicked");
-		statusBar.setText("Mode Dessin clicked");
-		mode = new EMRModeDessin();
 	}
 }
 

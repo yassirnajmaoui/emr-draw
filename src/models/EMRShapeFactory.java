@@ -3,12 +3,12 @@ package models;
 import controllers.AppController;
 import javafx.event.EventHandler;
 import javafx.scene.Cursor;
-import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
 public class EMRShapeFactory {
 
@@ -20,15 +20,64 @@ public class EMRShapeFactory {
 	private static double orgSceneX, orgSceneY;
 	private static boolean dragging;
 
+
+	public static Circle createCircle(double x, double y, AppController a) {
+		Circle circle = new Circle(x, y, CIRCLE_RADIUS, Color.GOLD);
+		circle.setStroke(Color.RED);
+		circle.setCursor(Cursor.HAND);
+		manageEvents(circle,a);
+		return circle;
+	}
+	
+	public static Rectangle createRect(double x, double y, AppController a) {
+		Rectangle rectangle = new Rectangle(x, y, SQUARE_SIZE, SQUARE_SIZE);
+		rectangle.setFill(Color.GOLD);
+		rectangle.setStroke(Color.RED);
+		rectangle.setCursor(Cursor.HAND);
+		manageEvents(rectangle,a);
+		return rectangle;
+	}
+	
+	public static Ellipse createEllipse(double x, double y, AppController a) {
+		Ellipse el = new Ellipse(x, y, ELLIPSE_WIDTH, ELLIPSE_HEIGHT);
+		el.setFill	(Color.PALEGREEN);
+		el.setStroke(Color.GREEN);
+		el.setCursor(Cursor.HAND);
+		manageEvents(el,a);
+		return el;
+	}
+	
+	private static void manageEvents(Shape n, AppController a)
+	{
+		n.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent t) {
+			      orgSceneX = t.getSceneX();
+			      orgSceneY = t.getSceneY();
+
+			      Shape c = (Shape) (t.getSource());
+			      c.toFront();			}
+		});
+		n.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent t) {
+				AppController.getMode().handleDragWhile(t,a);
+			}
+		});
+		n.setOnMouseReleased(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent t) {
+				AppController.getMode().handleDragOver(t,a);
+			}
+		});
+	}
+
 	public static boolean isDragging() {
 		return dragging;
 	}
-
-/*
-	public static void setDraggable(boolean draggable) {
-		EMRShapeFactory.draggable = draggable;
+	public static void setDragging(boolean b) {
+		dragging = b;
 	}
-*/
 
 	public static double getOrgSceneX() {
 		return orgSceneX;
@@ -44,86 +93,6 @@ public class EMRShapeFactory {
 
 	public static void setOrgSceneY(double orgSceneY) {
 		EMRShapeFactory.orgSceneY = orgSceneY;
-	}
-
-	public static Circle createCircle(double x, double y) {
-		Circle circle = new Circle(x, y, CIRCLE_RADIUS, Color.GOLD);
-		circle.setStroke(Color.RED);
-		circle.setCursor(Cursor.HAND);
-
-		circle.setOnMousePressed(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent t) {
-				orgSceneX = t.getSceneX();
-				orgSceneY = t.getSceneY();
-
-				Circle c = (Circle) (t.getSource());
-				c.toFront();
-			}
-		});
-		circle.setOnMouseDragged(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent t) {
-				AppController.getMode().handle(t);
-			}
-		});
-		circle.setOnMouseReleased(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent arg0) {
-				dragging=false;
-			}
-		});
-		return circle;
-	}
-	
-	public static Rectangle createRect(double x, double y) {
-		Rectangle rectangle = new Rectangle(x, y, SQUARE_SIZE, SQUARE_SIZE);
-		rectangle.setFill(Color.GOLD);
-		rectangle.setStroke(Color.RED);
-		rectangle.setCursor(Cursor.HAND);
-
-		rectangle.setOnMousePressed(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent t) {
-				orgSceneX = t.getSceneX();
-				orgSceneY = t.getSceneY();
-
-				Rectangle c = (Rectangle) (t.getSource());
-				c.toFront();
-			}
-		});
-		rectangle.setOnMouseDragged(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent t) {
-				AppController.getMode().handle(t);
-			}
-		});
-		return rectangle;
-	}
-	
-	public static Ellipse createEllipse(double x, double y) {
-		Ellipse el = new Ellipse(x, y, ELLIPSE_WIDTH, ELLIPSE_HEIGHT);
-		el.setFill	(Color.PALEGREEN);
-		el.setStroke(Color.GREEN);
-		el.setCursor(Cursor.HAND);
-
-		el.setOnMousePressed(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent t) {
-				orgSceneX = t.getSceneX();
-				orgSceneY = t.getSceneY();
-
-				Ellipse c = (Ellipse) (t.getSource());
-				c.toFront();
-			}
-		});
-		el.setOnMouseDragged(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent t) {
-				AppController.getMode().handle(t);
-			}
-		});
-		return el;
 	}
 	
 }
