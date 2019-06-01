@@ -18,7 +18,7 @@ public class EMRApplication extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/views/EMR_ui.fxml"));
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,600,600);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("EMR Application");
 			primaryStage.show();
