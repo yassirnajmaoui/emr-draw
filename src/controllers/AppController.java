@@ -15,8 +15,12 @@ import models.EMRModeDessin;
 import models.EMRShapeFactory;
 
 public class AppController {
-
-	EMRMode mode;
+	
+	static EMRMode mode;
+	public static EMRMode getMode()
+	{
+		return mode;
+	}
 
 	@FXML
 	public Circle emrCircle;
@@ -27,8 +31,21 @@ public class AppController {
 	@FXML
 	public Label statusBar;
 	@FXML
-	public BorderPane  emrPane;
+	public BorderPane emrPane;
 
+	@FXML
+	public void circleMouseDrag(MouseEvent e) {
+		emrPane.getChildren().add(EMRShapeFactory.createCircle(e.getSceneX(), e.getSceneY()));
+	}
+	@FXML
+	public void rectMouseDrag(MouseEvent e) {
+		emrPane.getChildren().add(EMRShapeFactory.createRect(e.getSceneX(), e.getSceneY()));
+	}
+	@FXML
+	public void ellipseMouseDrag(MouseEvent e) {
+		emrPane.getChildren().add(EMRShapeFactory.createEllipse(e.getSceneX(), e.getSceneY()));
+	}
+	
 	@FXML
 	public void openMenuClicked(ActionEvent a) {
 		System.out.println("Menu File-Open clicked");
@@ -77,18 +94,6 @@ public class AppController {
 		System.out.println("Mode Dessin clicked");
 		statusBar.setText("Mode Dessin clicked");
 		mode = new EMRModeDessin();
-	}
-	@FXML
-	public void circleMouseDrag(MouseEvent e) {
-		emrPane.getChildren().add(EMRShapeFactory.createCircle(e.getSceneX(), e.getSceneY()));
-	}
-	@FXML
-	public void rectMouseDrag(MouseEvent e) {
-		emrPane.getChildren().add(EMRShapeFactory.createRect(e.getSceneX(), e.getSceneY()));
-	}
-	@FXML
-	public void ellipseMouseDrag(MouseEvent e) {
-		emrPane.getChildren().add(EMRShapeFactory.createEllipse(e.getSceneX(), e.getSceneY()));
 	}
 }
 
