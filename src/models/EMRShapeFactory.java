@@ -1,5 +1,6 @@
 package models;
 
+import controllers.AppController;
 import javafx.event.EventHandler;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
@@ -17,6 +18,33 @@ public class EMRShapeFactory {
 	public static final double ELLIPSE_HEIGHT = 24.0d/2.0d;
 	
 	private static double orgSceneX, orgSceneY;
+	private static boolean dragging;
+
+	public static boolean isDragging() {
+		return dragging;
+	}
+
+/*
+	public static void setDraggable(boolean draggable) {
+		EMRShapeFactory.draggable = draggable;
+	}
+*/
+
+	public static double getOrgSceneX() {
+		return orgSceneX;
+	}
+
+	public static void setOrgSceneX(double orgSceneX) {
+		EMRShapeFactory.orgSceneX = orgSceneX;
+	}
+
+	public static double getOrgSceneY() {
+		return orgSceneY;
+	}
+
+	public static void setOrgSceneY(double orgSceneY) {
+		EMRShapeFactory.orgSceneY = orgSceneY;
+	}
 
 	public static Circle createCircle(double x, double y) {
 		Circle circle = new Circle(x, y, CIRCLE_RADIUS, Color.GOLD);
@@ -36,16 +64,13 @@ public class EMRShapeFactory {
 		circle.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {
-				double offsetX = t.getSceneX() - orgSceneX;
-				double offsetY = t.getSceneY() - orgSceneY;
-
-				Circle c = (Circle) (t.getSource());
-
-				c.setCenterX(c.getCenterX() + offsetX);
-				c.setCenterY(c.getCenterY() + offsetY);
-
-				orgSceneX = t.getSceneX();
-				orgSceneY = t.getSceneY();
+				AppController.getMode().handle(t);
+			}
+		});
+		circle.setOnMouseReleased(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				dragging=false;
 			}
 		});
 		return circle;
@@ -70,16 +95,7 @@ public class EMRShapeFactory {
 		rectangle.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {
-				double offsetX = t.getSceneX() - orgSceneX;
-				double offsetY = t.getSceneY() - orgSceneY;
-
-				Rectangle c = (Rectangle) (t.getSource());
-
-				c.setX(c.getX() + offsetX);
-				c.setY(c.getY() + offsetY);
-
-				orgSceneX = t.getSceneX();
-				orgSceneY = t.getSceneY();
+				AppController.getMode().handle(t);
 			}
 		});
 		return rectangle;
@@ -87,7 +103,7 @@ public class EMRShapeFactory {
 	
 	public static Ellipse createEllipse(double x, double y) {
 		Ellipse el = new Ellipse(x, y, ELLIPSE_WIDTH, ELLIPSE_HEIGHT);
-		el.setFill(Color.PALEGREEN);
+		el.setFill	(Color.PALEGREEN);
 		el.setStroke(Color.GREEN);
 		el.setCursor(Cursor.HAND);
 
@@ -104,16 +120,7 @@ public class EMRShapeFactory {
 		el.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {
-				double offsetX = t.getSceneX() - orgSceneX;
-				double offsetY = t.getSceneY() - orgSceneY;
-
-				Ellipse c = (Ellipse) (t.getSource());
-
-				c.setCenterX(c.getCenterX() + offsetX);
-				c.setCenterY(c.getCenterY() + offsetY);
-
-				orgSceneX = t.getSceneX();
-				orgSceneY = t.getSceneY();
+				AppController.getMode().handle(t);
 			}
 		});
 		return el;
