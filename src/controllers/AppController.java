@@ -95,14 +95,16 @@ public class AppController {
 	public void openMenuClicked(ActionEvent a) {
 		System.out.println("Menu File-Open clicked");
 		statusBar.setText("Menu File-Open clicked");
+		// TODO: open text files
+		emrShapes.importXML("myFile.xml");
 	}
 
 	@FXML
 	public void saveMenuClicked(ActionEvent e) {
 		System.out.println("Menu File-save clicked");
 		statusBar.setText("Menu File-save clicked");
-		//emrShapes.saveToXML("myFile.xml");
-		emrShapes.saveToFile("myFile.xml");
+		emrShapes.saveToXML("myFile.xml");
+		//emrShapes.saveToFile("myFile.txt");
 	}
 
 	@FXML
@@ -127,6 +129,7 @@ public class AppController {
 	public void aboutMenuClicked(ActionEvent e) {
 		System.out.println("Menu Help-About clicked");
 		statusBar.setText("Menu Help-About clicked");
+		System.out.println(emrShapes.toString()); // Temporaire
 	}
 }
 
@@ -139,7 +142,5 @@ public class AppController {
  * areaTxtField.setText(String.valueOf(circle.getArea())); } catch
  * (NumberFormatException e) { System.out.println(e.getMessage());
  * areaTxtField.setText("wroooong"); }
- * 
- * 
  * }
  */

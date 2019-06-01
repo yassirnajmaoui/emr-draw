@@ -15,17 +15,11 @@ public class EMRShape {
 	private double y;
 	private transient Shape shape;
 
-	public Shape getShape() {
-		return shape;
-	}
+	public Shape getShape() { return shape; }
 
-	public void setShape(Shape shape) {
-		this.shape = shape;
-	}
+	public void setShape(Shape shape) { this.shape = shape; }
 
-	public EMRShape() {
-		setDefaultIdentifier();
-	}
+	public EMRShape() { setDefaultIdentifier();}
 
 	public EMRShape(Shape shape) {
 		this.shape = shape;

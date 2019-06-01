@@ -1,7 +1,10 @@
 package models.iterator;
 
+import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
@@ -16,28 +19,17 @@ public class ShapeContainer implements Serializable, Container {
 
 	private ArrayList<EMRShape> shapeArray = new ArrayList<EMRShape>();
 
-	public ArrayList<EMRShape> getShapeArray() {
-		return shapeArray;
-	}
+	public ArrayList<EMRShape> getShapeArray() { return shapeArray; }
 
-	public void setShapeArray(ArrayList<EMRShape> shapeArray) {
-		this.shapeArray = shapeArray;
-	}
+	public void setShapeArray(ArrayList<EMRShape> shapeArray) { this.shapeArray = shapeArray; }
 
-	public ShapeContainer() {
-	}
+	public ShapeContainer() {}
 
-	public void addShape(EMRShape s) {
-		shapeArray.add(s);
-	}
+	public void addShape(EMRShape s) { shapeArray.add(s); }
 
-	public int getSize() {
-		return shapeArray.size();
-	}
+	public int getSize() { return shapeArray.size(); }
 
-	public EMRShape getElem(int index) {
-		return shapeArray.get(index);
-	}
+	public EMRShape getElem(int index) { return shapeArray.get(index); }
 
 	@Override
 	public Iterator getIterator() {
@@ -71,6 +63,20 @@ public class ShapeContainer implements Serializable, Container {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		System.out.println("Success...");
+		System.out.println("Success...!");
+	}
+	
+	public void importXML(String filename) {
+		
+		XMLDecoder decoder=null;
+		try {
+			decoder=new XMLDecoder(new BufferedInputStream(new FileInputStream(filename)));
+		} catch (FileNotFoundException e) {
+			System.out.println("ERROR: File shape.xml not found");
+		}
+		ShapeContainer tmpShapeContainer;
+		tmpShapeContainer=(ShapeContainer)decoder.readObject();
+		decoder.close();
+		setShapeArray(tmpShapeContainer.getShapeArray());
 	}
 }
