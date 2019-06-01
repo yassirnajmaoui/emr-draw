@@ -13,14 +13,18 @@ import javafx.scene.layout.Region;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 import models.EMRMode;
 import models.EMRModeConnexion;
 import models.EMRModeDessin;
+import models.EMRShape;
 import models.EMRShapeFactory;
+import models.iterator.ShapeContainer;
 
 public class AppController {
 	
 	static EMRMode mode;
+	public ShapeContainer emrShapes;
 	public static EMRMode getMode()
 	{
 		if(mode == null) mode = new EMRModeDessin();
@@ -42,9 +46,18 @@ public class AppController {
 	@FXML
 	public BorderPane emrPane;
 
-	public void addNode(Node n)
+	
+	public AppController()
+	{
+		emrShapes = new ShapeContainer();
+	}
+	
+	public void addNode(Shape n)
 	{
 		emrPane.getChildren().add(n);
+		EMRShape tmpEmrShape = new EMRShape(n);
+		emrShapes.addShape(tmpEmrShape);
+		//System.out.println(emrShapes);
 	}
 	
 	@FXML
@@ -88,6 +101,8 @@ public class AppController {
 	public void saveMenuClicked(ActionEvent e) {
 		System.out.println("Menu File-save clicked");
 		statusBar.setText("Menu File-save clicked");
+		//emrShapes.saveToXML("myFile.xml");
+		emrShapes.saveToFile("myFile.xml");
 	}
 
 	@FXML
