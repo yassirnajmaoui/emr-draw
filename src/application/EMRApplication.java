@@ -31,10 +31,10 @@ public class EMRApplication extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("EMR Application");
 			primaryStage.show();
+			
 
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
 }
