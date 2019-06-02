@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
@@ -21,10 +22,13 @@ import models.EMRModeConnexion;
 import models.EMRModeDessin;
 import models.EMRShape;
 import models.EMRShapeFactory;
+import models.EMRShapeFactory.eShape;
 import models.FileStrategy;
 import models.TXTStrategy;
 import models.XMLStrategy;
+import models.iterator.Iterator;
 import models.iterator.ShapeContainer;
+import models.iterator.ShapeIterator;
 
 public class AppController {
 	
@@ -52,7 +56,7 @@ public class AppController {
 	@FXML
 	public Button dessinBtn;
 	@FXML
-	public BorderPane emrPane;
+	public Pane emrPane;
 	@FXML
 	public VBox vboxPalette;
 
@@ -62,28 +66,27 @@ public class AppController {
 		emrShapes = new ShapeContainer();
 	}
 	
-	public void addNode(Shape n)
+	public void addNode(EMRShape n)
 	{
-		emrPane.getChildren().add(n);
-		EMRShape tmpEmrShape = new EMRShape(n);
-		emrShapes.addShape(tmpEmrShape);
+		emrPane.getChildren().add(n.getShape());
+		emrShapes.addShape(n);
 	}
 	
 	@FXML
 	public void circleMouseRelease(MouseEvent e) {
-		addNode(EMRShapeFactory.createCircle(e.getSceneX(), e.getSceneY(),this));
+		addNode(new EMRShape(eShape.CIRCLE, e.getSceneX()-emrPane.getLayoutX(), e.getSceneY()-emrPane.getLayoutY(),this));
 	}
 	@FXML
 	public void rectMouseRelease(MouseEvent e) {
-		addNode(EMRShapeFactory.createRect(e.getSceneX(), e.getSceneY(),this));
+		addNode(new EMRShape(eShape.SQUARE,e.getSceneX()-emrPane.getLayoutX(), e.getSceneY()-emrPane.getLayoutY(),this));
 	}
 	@FXML
 	public void ellipseMouseRelease(MouseEvent e) {
-		addNode(EMRShapeFactory.createEllipse(e.getSceneX(), e.getSceneY(),this));
+		addNode(new EMRShape(eShape.ELLIPSE,e.getSceneX()-emrPane.getLayoutX(), e.getSceneY()-emrPane.getLayoutY(),this));
 	}
 	@FXML
 	public void hexagonMouseRelease(MouseEvent e) {
-		addNode(EMRShapeFactory.createHexagon(e.getSceneX(), e.getSceneY(),this));
+		addNode(new EMRShape(eShape.HEXAGON,e.getSceneX()-emrPane.getLayoutX(), e.getSceneY()-emrPane.getLayoutY(),this));
 	}
 	
 	@FXML
@@ -110,8 +113,14 @@ public class AppController {
 	public void openMenuXMLClicked(ActionEvent a) {
 		System.out.println("Menu File-OpenXML clicked");
 		statusBar.setText("Menu File-OpenXML clicked");
+		emrPane.getChildren().clear();
 		myStrategy = new XMLStrategy();
 		myStrategy.openFile("myXMLFile.xml", emrShapes);
+		ShapeIterator it = (ShapeIterator)emrShapes.getIterator();
+		while(it.hasNext())
+		{
+			addNode(it.next());
+		}
 	}
 	
 	@FXML

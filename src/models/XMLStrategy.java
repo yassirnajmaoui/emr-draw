@@ -1,12 +1,13 @@
 package models;
 
 import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
 import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
 
 import models.iterator.ShapeContainer;
 
@@ -14,14 +15,18 @@ public class XMLStrategy implements FileStrategy {
 
 	@Override
 	public void saveFile(String filename, ShapeContainer shapeArray) {
-		XMLEncoder encoder = null;
+		XStream xstream = new XStream(new StaxDriver());
+		String dataXml = xstream.toXML(shapeArray);
+		
 		try {
-			encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(filename)));
-		} catch (FileNotFoundException fileNotFound) {
-			System.out.println("Error while opening the file!");
+			FileWriter fw = new FileWriter(filename);
+			fw.write(dataXml);
+			fw.close();
+		} catch (Exception e) {
+			System.out.println(e);
 		}
-		encoder.writeObject(shapeArray);
-		encoder.close();	
+		System.out.println("Success...!");
+		
 	}
 
 	@Override

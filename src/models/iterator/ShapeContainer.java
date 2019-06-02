@@ -1,21 +1,11 @@
 package models.iterator;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
-
-import javafx.scene.shape.Shape;
 import models.EMRShape;
 
-public class ShapeContainer implements Serializable, Container {
+public class ShapeContainer implements Container {
+
 
 	private ArrayList<EMRShape> shapeArray = new ArrayList<EMRShape>();
 
@@ -36,6 +26,7 @@ public class ShapeContainer implements Serializable, Container {
 		return new ShapeIterator(this);
 	}
 
+	@Override
 	public String toString() {
 		String toRet = "";
 		ShapeIterator it = (ShapeIterator) this.getIterator();
@@ -45,18 +36,6 @@ public class ShapeContainer implements Serializable, Container {
 		return toRet;
 	}
 
-	/*
-	public void saveToXML(String filename) {
-		XMLEncoder encoder = null;
-		try {
-			encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(filename)));
-		} catch (FileNotFoundException fileNotFound) {
-			System.out.println("Error while opening the file!");
-		}
-		encoder.writeObject(this);
-		encoder.close();
-	}*/
-	
 	public void saveToFile(String filename) {
 		try {
 			FileWriter fw = new FileWriter(filename);
@@ -67,20 +46,4 @@ public class ShapeContainer implements Serializable, Container {
 		}
 		System.out.println("Success...!");
 	}
-	
-/*	public void importXML(String filename) {
-		
-		XMLDecoder decoder=null;
-		try {
-			decoder=new XMLDecoder(new BufferedInputStream(new FileInputStream(filename)));
-		} catch (FileNotFoundException e) {
-			System.out.println("ERROR: File shape.xml not found");
-		}
-		ShapeContainer tmpShapeContainer;
-		tmpShapeContainer=(ShapeContainer)decoder.readObject();
-		decoder.close();
-		setShapeArray(tmpShapeContainer.getShapeArray());
-	}*/
-	
-	// TODO: importTextFile()
 }

@@ -1,12 +1,8 @@
 package models;
 
 import controllers.AppController;
-import javafx.beans.property.DoubleProperty;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class EMRModeConnexion implements EMRMode {
@@ -33,7 +29,7 @@ public class EMRModeConnexion implements EMRMode {
 			if(currentShape.getShape() != t.getSource())
 			{
 				// Starting to connect stuff
-				a.addNode(connect(currentShape, new EMRShape((Shape) t.getSource())));
+				a.addNode(new EMRShape(connect(currentShape, new EMRShape((Shape) t.getSource()))));
 			}
 			currentShape.getShape().setStyle("");
 			currentShape = null;
