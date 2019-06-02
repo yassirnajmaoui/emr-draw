@@ -1,7 +1,6 @@
 package models;
 
 import java.io.FileWriter;
-
 import javafx.beans.property.DoubleProperty;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;

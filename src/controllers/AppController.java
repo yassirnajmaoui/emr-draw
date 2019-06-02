@@ -37,14 +37,21 @@ public class AppController {
 		return mode;
 	}
 
+	
 	@FXML
-	public Circle emrCircle;
+	public Ellipse emrEllipse;				// Shape #6
 	@FXML
-	public Ellipse emrEllipse;
+	public Polygon emrParallelogramme1;		// Shape #8
 	@FXML
-	public Rectangle emrSquare;
+	public Polygon emrParallelogramme2;		// Shape #10
 	@FXML
-	public Polygon emrHexagon;
+	public Polygon emrHexagon;				// Shape #11
+	@FXML
+	public Circle emrCircle;				// Shape #13
+	@FXML
+	public Rectangle emrSquare;				// Shape #14
+	@FXML
+	public Polygon emrParallelogrammeDiago;
 	@FXML
 	public Label statusBar;
 	@FXML
