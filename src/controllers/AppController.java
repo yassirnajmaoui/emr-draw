@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
+//import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -21,11 +21,15 @@ import models.EMRModeConnexion;
 import models.EMRModeDessin;
 import models.EMRShape;
 import models.EMRShapeFactory;
+import models.FileStrategy;
+import models.TXTStrategy;
+import models.XMLStrategy;
 import models.iterator.ShapeContainer;
 
 public class AppController {
 	
 	static EMRMode mode;
+	public FileStrategy myStrategy;
 	public ShapeContainer emrShapes;
 	public static EMRMode getMode()
 	{
@@ -63,7 +67,6 @@ public class AppController {
 		emrPane.getChildren().add(n);
 		EMRShape tmpEmrShape = new EMRShape(n);
 		emrShapes.addShape(tmpEmrShape);
-		//System.out.println(emrShapes);
 	}
 	
 	@FXML
@@ -104,19 +107,34 @@ public class AppController {
 	}
 	
 	@FXML
-	public void openMenuClicked(ActionEvent a) {
-		System.out.println("Menu File-Open clicked");
-		statusBar.setText("Menu File-Open clicked");
-		// TODO: open text files
-		emrShapes.importXML("myFile.xml");
+	public void openMenuXMLClicked(ActionEvent a) {
+		System.out.println("Menu File-OpenXML clicked");
+		statusBar.setText("Menu File-OpenXML clicked");
+		myStrategy = new XMLStrategy();
+		myStrategy.openFile("myXMLFile.xml", emrShapes);
 	}
 	
 	@FXML
-	public void saveMenuClicked(ActionEvent e) {
+	public void openMenuTXTClicked(ActionEvent a) {
+		System.out.println("Menu File-OpenTXT clicked");
+		statusBar.setText("Menu File-OpenTXT clicked");
+		// TODO: import txt file
+	}
+	
+	@FXML
+	public void saveMenuXMLClicked(ActionEvent e) {
 		System.out.println("Menu File-save clicked");
 		statusBar.setText("Menu File-save clicked");
-		emrShapes.saveToXML("myFile.xml");
-		//emrShapes.saveToFile("myFile.txt");
+		myStrategy = new XMLStrategy();
+		myStrategy.saveFile("myXMLFile.xml", emrShapes);
+	}
+	
+	@FXML
+	public void saveMenuTXTClicked(ActionEvent e) {
+		System.out.println("Menu File-save clicked");
+		statusBar.setText("Menu File-save clicked");
+		myStrategy = new TXTStrategy();
+		myStrategy.saveFile("myTXTFile.txt", emrShapes);
 	}
 
 	@FXML

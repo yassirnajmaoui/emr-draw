@@ -45,6 +45,7 @@ public class ShapeContainer implements Serializable, Container {
 		return toRet;
 	}
 
+	/*
 	public void saveToXML(String filename) {
 		XMLEncoder encoder = null;
 		try {
@@ -54,7 +55,7 @@ public class ShapeContainer implements Serializable, Container {
 		}
 		encoder.writeObject(this);
 		encoder.close();
-	}
+	}*/
 	
 	public void saveToFile(String filename) {
 		try {
@@ -67,7 +68,7 @@ public class ShapeContainer implements Serializable, Container {
 		System.out.println("Success...!");
 	}
 	
-	public void importXML(String filename) {
+/*	public void importXML(String filename) {
 		
 		XMLDecoder decoder=null;
 		try {
@@ -79,7 +80,7 @@ public class ShapeContainer implements Serializable, Container {
 		tmpShapeContainer=(ShapeContainer)decoder.readObject();
 		decoder.close();
 		setShapeArray(tmpShapeContainer.getShapeArray());
-	}
+	}*/
 	
 	// TODO: importTextFile()
 }

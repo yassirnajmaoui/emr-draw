@@ -17,8 +17,10 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                        <MenuItem fx:id="menuOpen" mnemonicParsing="false" onAction="#openMenuClicked" text="Open" />
-                        <MenuItem fx:id="menuSave" mnemonicParsing="false" onAction="#saveMenuClicked" text="Save" />
+                        <MenuItem fx:id="menuOpenXML" mnemonicParsing="false" onAction="#openMenuXMLClicked" text="OpenXML" />
+                        <MenuItem fx:id="menuOpenTXT" mnemonicParsing="false" onAction="#openMenuTXTClicked" text="OpenTXT" />
+                        <MenuItem fx:id="menuSaveXML" mnemonicParsing="false" onAction="#saveMenuXMLClicked" text="SaveXML" />
+                        <MenuItem fx:id="menuSaveTXT" mnemonicParsing="false" onAction="#saveMenuTXTClicked" text="SaveTXT" />
                     	<MenuItem fx:id="menuQuit" mnemonicParsing="false" onAction="#quitMenuClicked" text="Quit" />
                   </items>
                 </Menu>
@@ -53,7 +55,7 @@
             <Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseRelease" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" />
             <Circle fx:id="emrCircle" fill="GOLD" onMouseReleased="#circleMouseRelease" radius="20.0" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" />
             <Rectangle fx:id="emrSquare" arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="40.0" onMouseReleased="#rectMouseRelease" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" width="40.0" />
-            <Polygon fx:id="emrHexagon" fill="EE82EE" onMouseReleased="#hexagonMouseRelease" stroke="#0000FF" style="-fx-cursor: hand;" strokeType="OUTSIDE">
+            <Polygon fx:id="emrHexagon" fill="EE82EE" onMouseReleased="#hexagonMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;">
 			<points>
                 <Double fx:value="12.0" />
                 <Double fx:value="0.0" />
