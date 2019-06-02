@@ -79,4 +79,6 @@ public class ShapeContainer implements Serializable, Container {
 		decoder.close();
 		setShapeArray(tmpShapeContainer.getShapeArray());
 	}
+	
+	// TODO: importTextFile()
 }

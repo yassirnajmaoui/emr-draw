@@ -12,6 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import models.EMRMode;
@@ -37,6 +38,8 @@ public class AppController {
 	public Ellipse emrEllipse;
 	@FXML
 	public Rectangle emrSquare;
+	@FXML
+	public Polygon emrHexagon;
 	@FXML
 	public Label statusBar;
 	@FXML
@@ -98,7 +101,7 @@ public class AppController {
 		// TODO: open text files
 		emrShapes.importXML("myFile.xml");
 	}
-
+	
 	@FXML
 	public void saveMenuClicked(ActionEvent e) {
 		System.out.println("Menu File-save clicked");
@@ -144,3 +147,25 @@ public class AppController {
  * areaTxtField.setText("wroooong"); }
  * }
  */
+
+/* code temporaire à deleter quand on est sûr que c'est ok d'instancier les formes de la palette dans le fxml
+public class Hexagon {
+	
+	public Hexagon(){;}
+	
+	public Polygon createHexagon() {
+	    Polygon hexagon = new Polygon();
+	    hexagon.getPoints().addAll(new Double[]{        
+
+		    12.0, 0.0,
+		    32.0, 0.0,
+		    44.0, 20.0,
+		    32.0, 40.0,
+		    12.0, 40.0,
+		    0.0, 20.0
+
+	    		});
+	    return hexagon;
+	}
+}
+*/

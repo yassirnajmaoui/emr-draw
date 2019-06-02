@@ -7,6 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Polygon?>
 
 <BorderPane fx:id="emrPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AppController">
    <top>
@@ -52,6 +53,22 @@
             <Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseDrag" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" />
             <Circle fx:id="emrCircle" fill="GOLD" onMouseReleased="#circleMouseDrag" radius="20.0" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" />
             <Rectangle fx:id="emrSquare" arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="40.0" onMouseReleased="#rectMouseDrag" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" width="40.0" />
+            <Polygon fx:id="emrHexagon" fill="EE82EE" stroke="#0000FF" strokeType="OUTSIDE">
+			<points>
+                <Double fx:value="12.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="32.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="44.0" />
+                <Double fx:value="20.0" />
+                <Double fx:value="32.0" />
+                <Double fx:value="40.0" />
+                <Double fx:value="12.0" />
+                <Double fx:value="40.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="20.0" />
+            </points>
+        </Polygon>
          </children>
       </VBox>
    </left>
