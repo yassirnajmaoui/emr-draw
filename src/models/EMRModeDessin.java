@@ -24,10 +24,11 @@ public class EMRModeDessin implements EMRMode {
 		EMRShapeFactory.setOrgSceneX(t.getSceneX());
 		EMRShapeFactory.setOrgSceneY(t.getSceneY());
 	}
-
-	@Override
-	public void handleDragOver(MouseEvent t, AppController a) {
-		// TODO Auto-generated method stub
-		
-	}
+	  
+	  @Override
+	  public void handleDragOver(MouseEvent t, AppController a) { 
+	  // TODO Auto-generated method stub
+	  }
+	  
 }
+	 
