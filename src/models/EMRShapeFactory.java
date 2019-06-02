@@ -7,54 +7,59 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class EMRShapeFactory {
 
-	public static final double CIRCLE_RADIUS = 20.0d;
-	public static final double SQUARE_SIZE = 38.0d;
-	public static final double ELLIPSE_WIDTH = 45.0d/2.0d;
-	public static final double ELLIPSE_HEIGHT = 24.0d/2.0d;
-	
 	private static double orgSceneX, orgSceneY;
 	private static boolean dragging;
 
 
 	public static Circle createCircle(double x, double y, AppController a) {
-		Circle circle = new Circle(CIRCLE_RADIUS, Color.GOLD);
+		Circle circle = new Circle(a.emrCircle.getRadius());
 		circle.setTranslateX(x);
 		circle.setTranslateY(y);
-		circle.setStroke(Color.RED);
-		circle.setCursor(Cursor.HAND);
+		circle.setStroke(a.emrCircle.getStroke());
+		circle.setFill(a.emrCircle.getFill());
 		manageEvents(circle,a);
 		return circle;
 	}
 	
 	public static Rectangle createRect(double x, double y, AppController a) {
-		Rectangle rectangle = new Rectangle(SQUARE_SIZE, SQUARE_SIZE);
+		Rectangle rectangle = new Rectangle(a.emrSquare.getWidth(), a.emrSquare.getHeight());
 		rectangle.setTranslateX(x);
 		rectangle.setTranslateY(y);
 		rectangle.setFill(Color.GOLD);
 		rectangle.setStroke(Color.RED);
-		rectangle.setCursor(Cursor.HAND);
-		manageEvents(rectangle,a);
+		manageEvents(rectangle, a);
 		return rectangle;
 	}
 	
 	public static Ellipse createEllipse(double x, double y, AppController a) {
-		Ellipse el = new Ellipse(ELLIPSE_WIDTH, ELLIPSE_HEIGHT);
+		Ellipse el = new Ellipse(a.emrEllipse.getRadiusX(), a.emrEllipse.getRadiusY());
 		el.setTranslateX(x);
 		el.setTranslateY(y);
-		el.setFill(Color.PALEGREEN);
-		el.setStroke(Color.GREEN);
-		el.setCursor(Cursor.HAND);
+		el.setFill(a.emrEllipse.getFill());
+		el.setStroke(a.emrEllipse.getStroke());
 		manageEvents(el,a);
 		return el;
+	}
+	public static Polygon createHexagon(double x, double y, AppController a) {
+		Polygon poly = new Polygon();
+		poly.getPoints().addAll(a.emrHexagon.getPoints());
+		poly.setTranslateX(x);
+		poly.setTranslateY(y);
+		poly.setStroke(a.emrHexagon.getStroke());
+		poly.setFill(a.emrHexagon.getFill());
+		manageEvents(poly,a);
+		return poly;
 	}
 	
 	private static void manageEvents(Shape n, AppController a)
 	{
+		n.setCursor(Cursor.HAND);
 		n.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {

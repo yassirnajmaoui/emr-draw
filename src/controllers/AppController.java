@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Polygon;
@@ -48,6 +49,8 @@ public class AppController {
 	public Button dessinBtn;
 	@FXML
 	public BorderPane emrPane;
+	@FXML
+	public VBox vboxPalette;
 
 	
 	public AppController()
@@ -64,16 +67,20 @@ public class AppController {
 	}
 	
 	@FXML
-	public void circleMouseDrag(MouseEvent e) {
+	public void circleMouseRelease(MouseEvent e) {
 		addNode(EMRShapeFactory.createCircle(e.getSceneX(), e.getSceneY(),this));
 	}
 	@FXML
-	public void rectMouseDrag(MouseEvent e) {
+	public void rectMouseRelease(MouseEvent e) {
 		addNode(EMRShapeFactory.createRect(e.getSceneX(), e.getSceneY(),this));
 	}
 	@FXML
-	public void ellipseMouseDrag(MouseEvent e) {
+	public void ellipseMouseRelease(MouseEvent e) {
 		addNode(EMRShapeFactory.createEllipse(e.getSceneX(), e.getSceneY(),this));
+	}
+	@FXML
+	public void hexagonMouseRelease(MouseEvent e) {
+		addNode(EMRShapeFactory.createHexagon(e.getSceneX(), e.getSceneY(),this));
 	}
 	
 	@FXML
@@ -82,6 +89,7 @@ public class AppController {
 		statusBar.setText("Mode Connexion clicked");
 		connexionBtn.setStyle("-fx-background-color:white");
 		dessinBtn.setStyle("-fx-background-color:gray");
+		vboxPalette.setDisable(true);
 		mode = new EMRModeConnexion();
 	}
 
@@ -91,6 +99,7 @@ public class AppController {
 		statusBar.setText("Mode Dessin clicked");
 		dessinBtn.setStyle("-fx-background-color:white");
 		connexionBtn.setStyle("-fx-background-color:gray");
+		vboxPalette.setDisable(false);
 		mode = new EMRModeDessin();
 	}
 	
