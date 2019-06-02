@@ -17,10 +17,18 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                        <MenuItem fx:id="menuOpenXML" mnemonicParsing="false" onAction="#openMenuXMLClicked" text="OpenXML" />
-                        <MenuItem fx:id="menuOpenTXT" mnemonicParsing="false" onAction="#openMenuTXTClicked" text="OpenTXT" />
-                        <MenuItem fx:id="menuSaveXML" mnemonicParsing="false" onAction="#saveMenuXMLClicked" text="SaveXML" />
-                        <MenuItem fx:id="menuSaveTXT" mnemonicParsing="false" onAction="#saveMenuTXTClicked" text="SaveTXT" />
+                        <Menu mnemonicParsing="false" text="Open">
+                          <items>
+                              <MenuItem fx:id="menuOpenXML" mnemonicParsing="false" onAction="#openMenuXMLClicked" text="OpenXML" />
+                              <MenuItem fx:id="menuOpenTXT" mnemonicParsing="false" onAction="#openMenuTXTClicked" text="OpenTXT" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Save">
+                          <items>
+                              <MenuItem fx:id="menuSaveXML" mnemonicParsing="false" onAction="#saveMenuXMLClicked" text="SaveXML" />
+                              <MenuItem fx:id="menuSaveTXT" mnemonicParsing="false" onAction="#saveMenuTXTClicked" text="SaveTXT" />
+                          </items>
+                        </Menu>
                     	<MenuItem fx:id="menuQuit" mnemonicParsing="false" onAction="#quitMenuClicked" text="Quit" />
                   </items>
                 </Menu>

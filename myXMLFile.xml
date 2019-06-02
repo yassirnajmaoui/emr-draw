@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11" class="java.beans.XMLDecoder">
+ <object class="models.iterator.ShapeContainer" id="ShapeContainer0">
+  <void property="shapeArray">
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Ellipse</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Ellipse">
+       <void property="radiusX">
+        <double>22.5</double>
+       </void>
+       <void property="radiusY">
+        <double>12.0</double>
+       </void>
+       <void property="translateX">
+        <double>366.0</double>
+       </void>
+       <void property="translateY">
+        <double>126.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Circle</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Circle">
+       <void property="radius">
+        <double>20.0</double>
+       </void>
+       <void property="translateX">
+        <double>351.0</double>
+       </void>
+       <void property="translateY">
+        <double>374.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Rectangle</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Rectangle">
+       <void property="height">
+        <double>40.0</double>
+       </void>
+       <void property="translateX">
+        <double>517.0</double>
+       </void>
+       <void property="translateY">
+        <double>408.0</double>
+       </void>
+       <void property="width">
+        <double>40.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="shape">
+      <object class="javafx.scene.shape.Polygon">
+       <void property="translateX">
+        <double>514.0</double>
+       </void>
+       <void property="translateY">
+        <double>221.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Line</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Line">
+       <void property="endX">
+        <double>514.0</double>
+       </void>
+       <void property="endY">
+        <double>221.0</double>
+       </void>
+       <void property="startX">
+        <double>366.0</double>
+       </void>
+       <void property="startY">
+        <double>126.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Line</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Line">
+       <void property="endX">
+        <double>351.0</double>
+       </void>
+       <void property="endY">
+        <double>374.0</double>
+       </void>
+       <void property="startX">
+        <double>366.0</double>
+       </void>
+       <void property="startY">
+        <double>126.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Line</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Line">
+       <void property="endX">
+        <double>366.0</double>
+       </void>
+       <void property="endY">
+        <double>126.0</double>
+       </void>
+       <void property="startX">
+        <double>517.0</double>
+       </void>
+       <void property="startY">
+        <double>408.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Line</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Line">
+       <void property="endX">
+        <double>514.0</double>
+       </void>
+       <void property="endY">
+        <double>221.0</double>
+       </void>
+       <void property="startX">
+        <double>517.0</double>
+       </void>
+       <void property="startY">
+        <double>408.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

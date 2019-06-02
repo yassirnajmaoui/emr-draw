@@ -2,6 +2,9 @@ package models.iterator;
 
 import models.EMRShape;
 
+//----------------------------------------------------
+//This class makes part of the Iterator Design Pattern
+//----------------------------------------------------
 public class ShapeIterator implements Iterator {
 
 	int index;

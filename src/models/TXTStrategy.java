@@ -1,9 +1,10 @@
 package models;
 
 import java.io.FileWriter;
-
 import models.iterator.ShapeContainer;
-
+// ----------------------------------------------------
+// This class makes part of the Strategy Design Pattern
+// ----------------------------------------------------
 public class TXTStrategy implements FileStrategy {
 
 	@Override

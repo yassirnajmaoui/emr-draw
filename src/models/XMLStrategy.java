@@ -9,8 +9,11 @@ import java.io.FileWriter;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
+import java.io.FileOutputStream;
 import models.iterator.ShapeContainer;
-
+//----------------------------------------------------
+//This class makes part of the Strategy Design Pattern
+//----------------------------------------------------
 public class XMLStrategy implements FileStrategy {
 
 	@Override

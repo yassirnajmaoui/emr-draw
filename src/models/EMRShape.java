@@ -83,9 +83,7 @@ public class EMRShape {
 		return shape.translateYProperty();
 	}
 
-	public String getIdentifier() {
-		return this.identifier;
-	}
+	public String getIdentifier() {return this.identifier;}
 
 	public void setDefaultIdentifier() {
 		if (shape instanceof Rectangle) {
@@ -101,10 +99,16 @@ public class EMRShape {
 		}
 	}
 
+
+	public void setIdentifier(String identifier) { this.identifier = identifier;}
+	
+
 	@Override
 	public String toString() {
 		// Ignore "Line"s here!
 		return identifier + "," + String.valueOf(this.getX()) + "," + String.valueOf(this.getY());
 	}
+
+
 
 }
