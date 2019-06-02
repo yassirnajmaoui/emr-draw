@@ -38,7 +38,7 @@ public class EMRShape {
 		setDefaultIdentifier();
 	}
 
-	public double getX() {
+	public double getX() {/*
 		if (shape instanceof Rectangle) {
 			this.x = ((Rectangle) shape).getX();
 		} else if (shape instanceof Ellipse) {
@@ -46,10 +46,11 @@ public class EMRShape {
 		} else if (shape instanceof Circle) {
 			this.x = ((Circle) shape).getCenterX();
 		}
-		return this.x;
+		return this.x;*/
+		return this.shape.getTranslateX();
 	}
 
-	public void setX(double x) {
+	public void setX(double x) {/*
 		if (shape instanceof Rectangle) {
 			((Rectangle) shape).setX(x);
 		} else if (shape instanceof Ellipse) {
@@ -57,10 +58,11 @@ public class EMRShape {
 		} else if (shape instanceof Circle) {
 			((Circle) shape).setCenterX(x);
 		}
-		this.x = x;
+		this.x = x;*/
+		this.shape.setTranslateX(x);
 	}
 
-	public double getY() {
+	public double getY() {/*
 		if (shape instanceof Rectangle) {
 			this.y = ((Rectangle) shape).getY();
 		} else if (shape instanceof Ellipse) {
@@ -68,10 +70,11 @@ public class EMRShape {
 		} else if (shape instanceof Circle) {
 			this.y = ((Circle) shape).getCenterY();
 		}
-		return this.y;
+		return this.y;*/
+		return this.shape.getTranslateY();
 	}
 
-	public void setY(double y) {
+	public void setY(double y) {/*
 		if (shape instanceof Rectangle) {
 			((Rectangle) shape).setY(y);
 		} else if (shape instanceof Ellipse) {
@@ -79,10 +82,12 @@ public class EMRShape {
 		} else if (shape instanceof Circle) {
 			((Circle) shape).setCenterY(y);
 		}
-		this.y = y;
+		this.y = y;*/
+		shape.setTranslateY(y);
 	}
 
 	public DoubleProperty getXProperty() {
+		/*
 		if (shape instanceof Rectangle) {
 			return (((Rectangle) shape).xProperty());
 		} else if (shape instanceof Ellipse) {
@@ -90,10 +95,12 @@ public class EMRShape {
 		} else if (shape instanceof Circle) {
 			return (((Circle) shape).centerXProperty());
 		} else
-			return null;
+			return null;*/
+		return shape.translateXProperty();
 	}
 
 	public DoubleProperty getYProperty() {
+		/*
 		if (shape instanceof Rectangle) {
 			return (((Rectangle) shape).yProperty());
 		} else if (shape instanceof Ellipse) {
@@ -101,7 +108,8 @@ public class EMRShape {
 		} else if (shape instanceof Circle) {
 			return (((Circle) shape).centerYProperty());
 		} else
-			return null;
+			return null;*/
+		return shape.translateYProperty();
 	}
 
 	public String getIdentifier() {
@@ -120,13 +128,12 @@ public class EMRShape {
 		}
 	}
 
-	/*
-	 * public void setIdentifier(String identifier) { this.identifier = identifier;
-	 * }
-	 */
+
+	public void setIdentifier(String identifier) { this.identifier = identifier;}
+	
 
 	public String toString() {
-		// Ignore lines here!
+		// Ignore "Line"s here!
 		return identifier + "-(" + String.valueOf(this.getX()) + ", " + String.valueOf(this.getY()) + ")";
 	}
 

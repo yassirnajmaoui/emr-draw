@@ -1,6 +1,7 @@
 package models;
 
 import controllers.AppController;
+import javafx.beans.property.DoubleProperty;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;

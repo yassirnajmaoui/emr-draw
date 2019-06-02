@@ -46,8 +46,9 @@ public class ShapeContainer implements Serializable, Container {
 
 	public String toString() {
 		String toRet = "";
-		for (int i = 0; i < getSize(); ++i) {
-			toRet += shapeArray.get(i) + "\n";
+		ShapeIterator it = (ShapeIterator) this.getIterator();
+		while (it.hasNext()) {
+			toRet += it.next().toString() + "\n";
 		}
 		return toRet;
 	}

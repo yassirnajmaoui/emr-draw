@@ -22,7 +22,9 @@ public class EMRShapeFactory {
 
 
 	public static Circle createCircle(double x, double y, AppController a) {
-		Circle circle = new Circle(x, y, CIRCLE_RADIUS, Color.GOLD);
+		Circle circle = new Circle(CIRCLE_RADIUS, Color.GOLD);
+		circle.setTranslateX(x);
+		circle.setTranslateY(y);
 		circle.setStroke(Color.RED);
 		circle.setCursor(Cursor.HAND);
 		manageEvents(circle,a);
@@ -30,7 +32,9 @@ public class EMRShapeFactory {
 	}
 	
 	public static Rectangle createRect(double x, double y, AppController a) {
-		Rectangle rectangle = new Rectangle(x, y, SQUARE_SIZE, SQUARE_SIZE);
+		Rectangle rectangle = new Rectangle(SQUARE_SIZE, SQUARE_SIZE);
+		rectangle.setTranslateX(x);
+		rectangle.setTranslateY(y);
 		rectangle.setFill(Color.GOLD);
 		rectangle.setStroke(Color.RED);
 		rectangle.setCursor(Cursor.HAND);
@@ -39,8 +43,10 @@ public class EMRShapeFactory {
 	}
 	
 	public static Ellipse createEllipse(double x, double y, AppController a) {
-		Ellipse el = new Ellipse(x, y, ELLIPSE_WIDTH, ELLIPSE_HEIGHT);
-		el.setFill	(Color.PALEGREEN);
+		Ellipse el = new Ellipse(ELLIPSE_WIDTH, ELLIPSE_HEIGHT);
+		el.setTranslateX(x);
+		el.setTranslateY(y);
+		el.setFill(Color.PALEGREEN);
 		el.setStroke(Color.GREEN);
 		el.setCursor(Cursor.HAND);
 		manageEvents(el,a);
@@ -56,7 +62,8 @@ public class EMRShapeFactory {
 			      orgSceneY = t.getSceneY();
 
 			      Shape c = (Shape) (t.getSource());
-			      c.toFront();			}
+			      c.toFront();
+			}
 		});
 		n.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			@Override
