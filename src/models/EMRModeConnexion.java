@@ -9,6 +9,9 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
+//--------------------------------------------------
+//This class makes part of the State Design Pattern
+//--------------------------------------------------
 public class EMRModeConnexion implements EMRMode {
 
 	private Line currentLine;

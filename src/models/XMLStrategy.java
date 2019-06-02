@@ -7,9 +7,10 @@ import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-
 import models.iterator.ShapeContainer;
-
+//----------------------------------------------------
+//This class makes part of the Strategy Design Pattern
+//----------------------------------------------------
 public class XMLStrategy implements FileStrategy {
 
 	@Override

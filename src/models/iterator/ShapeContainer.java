@@ -11,10 +11,12 @@ import java.io.FileWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javafx.scene.shape.Shape;
 import models.EMRShape;
 
+//----------------------------------------------------
+//This class makes part of the Iterator Design Pattern
+//----------------------------------------------------
 public class ShapeContainer implements Serializable, Container {
 
 	private ArrayList<EMRShape> shapeArray = new ArrayList<EMRShape>();

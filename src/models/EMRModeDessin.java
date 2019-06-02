@@ -4,6 +4,9 @@ import controllers.AppController;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Shape;
 
+//--------------------------------------------------
+//This class makes part of the State Design Pattern
+//--------------------------------------------------
 public class EMRModeDessin implements EMRMode {
 
 	@Override

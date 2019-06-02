@@ -11,6 +11,9 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
+//----------------------------------------------------
+//This class makes part of the Factory Design Pattern
+//----------------------------------------------------
 public class EMRShapeFactory {
 
 	private static double orgSceneX, orgSceneY;
