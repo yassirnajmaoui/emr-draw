@@ -119,6 +119,8 @@ public class EMRShape {
 			this.identifier = "Circle";
 		} else if (shape instanceof Line) {
 			this.identifier = "Line";
+		} else if (shape instanceof Polygon && ((Polygon) shape).getPoints().size() == 6) {
+			this.identifier = "Hexagon";
 		}
 	}
 
@@ -126,9 +128,10 @@ public class EMRShape {
 	public void setIdentifier(String identifier) { this.identifier = identifier;}
 	
 
+	@Override
 	public String toString() {
 		// Ignore "Line"s here!
-		return identifier + "-(" + String.valueOf(this.getX()) + ", " + String.valueOf(this.getY()) + ")";
+		return identifier + "," + String.valueOf(this.getX()) + "," + String.valueOf(this.getY());
 	}
 
 
