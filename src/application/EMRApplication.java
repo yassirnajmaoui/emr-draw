@@ -26,7 +26,6 @@ public class EMRApplication extends Application {
 			primaryStage.setTitle("EMR Application");
 			primaryStage.show();
 			
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

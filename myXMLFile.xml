@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11" class="java.beans.XMLDecoder">
+ <object class="models.iterator.ShapeContainer" id="ShapeContainer0">
+  <void property="shapeArray">
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Circle</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Circle">
+       <void property="radius">
+        <double>20.0</double>
+       </void>
+       <void property="translateX">
+        <double>438.0</double>
+       </void>
+       <void property="translateY">
+        <double>170.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="shape">
+      <object class="javafx.scene.shape.Polygon">
+       <void property="translateX">
+        <double>357.0</double>
+       </void>
+       <void property="translateY">
+        <double>331.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Ellipse</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Ellipse">
+       <void property="radiusX">
+        <double>22.5</double>
+       </void>
+       <void property="radiusY">
+        <double>12.0</double>
+       </void>
+       <void property="translateX">
+        <double>368.0</double>
+       </void>
+       <void property="translateY">
+        <double>232.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Ellipse</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Ellipse">
+       <void property="radiusX">
+        <double>22.5</double>
+       </void>
+       <void property="radiusY">
+        <double>12.0</double>
+       </void>
+       <void property="translateX">
+        <double>503.0</double>
+       </void>
+       <void property="translateY">
+        <double>314.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Ellipse</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Ellipse">
+       <void property="radiusX">
+        <double>22.5</double>
+       </void>
+       <void property="radiusY">
+        <double>12.0</double>
+       </void>
+       <void property="translateX">
+        <double>545.0</double>
+       </void>
+       <void property="translateY">
+        <double>243.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="models.EMRShape">
+     <void property="identifier">
+      <string>Ellipse</string>
+     </void>
+     <void property="shape">
+      <object class="javafx.scene.shape.Ellipse">
+       <void property="radiusX">
+        <double>22.5</double>
+       </void>
+       <void property="radiusY">
+        <double>12.0</double>
+       </void>
+       <void property="translateX">
+        <double>523.0</double>
+       </void>
+       <void property="translateY">
+        <double>164.0</double>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
