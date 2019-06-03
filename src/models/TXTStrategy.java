@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import controllers.AppController;
 import javafx.scene.shape.Line;
-import models.EMRShapeFactory.eShape;
 import models.iterator.ShapeContainer;
 
 // ----------------------------------------------------

@@ -33,6 +33,12 @@ public class EMRShape {
 		case EMRShapeFactory.HEXAGON_ID:
 			this.shape = EMRShapeFactory.createHexagon(x, y, a);
 			break;
+		case EMRShapeFactory.TRAPEZE_ID:
+			this.shape = EMRShapeFactory.createTrapeze(x, y, a);
+			break;
+		case EMRShapeFactory.TRAPEZEDIAGO_ID:
+			this.shape = EMRShapeFactory.createTrapezeDiago(x, y, a);
+			break;
 		case EMRShapeFactory.TRAPEZEPLEIN_ID:
 			this.shape = EMRShapeFactory.createTrapezePlein(x, y, a);
 			break;

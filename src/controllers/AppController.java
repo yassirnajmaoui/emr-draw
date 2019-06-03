@@ -8,6 +8,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import models.EMRMode;
@@ -35,17 +36,15 @@ public class AppController {
 	@FXML
 	public Ellipse emrEllipse; // Shape #6
 	@FXML
-	public Polygon emrParallelogramme1; // Shape #8
-	@FXML
-	public Polygon emrParallelogramme2; // Shape #10
-	@FXML
 	public Polygon emrHexagon; // Shape #11
 	@FXML
 	public Circle emrCircle; // Shape #13
 	@FXML
 	public Rectangle emrSquare; // Shape #14
 	@FXML
-	public Polygon emrParallelogrammeDiago;
+	public Polygon emrTrapeze;
+	@FXML
+	public Polygon emrTrapezePlein;
 	@FXML
 	public Label statusBar;
 	@FXML
@@ -56,6 +55,8 @@ public class AppController {
 	public Pane emrPane;
 	@FXML
 	public GridPane gridPalette;
+	@FXML
+	public Path emrTrapezeDiago;
 
 	public AppController() {
 		emrShapes = new ShapeContainer();
@@ -90,7 +91,17 @@ public class AppController {
 	}
 
 	@FXML
-	public void trapezepleinMouseRelease(MouseEvent e) {
+	public void trapezeMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.TRAPEZE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
+	@FXML
+	public void trapezeDiagoMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.TRAPEZEDIAGO_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
+	@FXML
+	public void trapezePleinMouseRelease(MouseEvent e) {
 		addNode(new EMRShape(EMRShapeFactory.TRAPEZEPLEIN_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}

@@ -7,6 +7,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -22,6 +23,8 @@ public class EMRShapeFactory {
 	public static final String CIRCLE_ID = "cercle";
 	public static final String SQUARE_ID = "carre";
 	public static final String HEXAGON_ID = "hexagone";
+	public static final String TRAPEZE_ID = "trapeze";
+	public static final String TRAPEZEDIAGO_ID = "trapezediago";
 	public static final String TRAPEZEPLEIN_ID = "trapezeplein";
 	public static final String LINE_ID = "connexion";
 	
@@ -64,15 +67,35 @@ public class EMRShapeFactory {
 		manageEvents(poly,a);
 		return poly;
 	}
-	public static Polygon createTrapezePlein(double x, double y, AppController a) {
+	public static Polygon createTrapeze(double x, double y, AppController a) {
 		Polygon poly = new Polygon();
-		poly.getPoints().addAll(a.emrParallelogramme1.getPoints());
+		poly.getPoints().addAll(a.emrTrapeze.getPoints());
 		poly.setTranslateX(x);
 		poly.setTranslateY(y);
-		poly.setStroke(a.emrParallelogramme1.getStroke());
-		poly.setFill(a.emrParallelogramme1.getFill());
+		poly.setStroke(a.emrTrapeze.getStroke());
+		poly.setFill(a.emrTrapeze.getFill());
 		manageEvents(poly,a);
 		return poly;
+	}
+	public static Polygon createTrapezePlein(double x, double y, AppController a) {
+		Polygon poly = new Polygon();
+		poly.getPoints().addAll(a.emrTrapezePlein.getPoints());
+		poly.setTranslateX(x);
+		poly.setTranslateY(y);
+		poly.setStroke(a.emrTrapezePlein.getStroke());
+		poly.setFill(a.emrTrapezePlein.getFill());
+		manageEvents(poly,a);
+		return poly;
+	}
+	public static Path createTrapezeDiago(double x, double y, AppController a) {
+		Path path = new Path(a.emrTrapezeDiago.getElements());
+		path.setFillRule(a.emrTrapezeDiago.getFillRule());
+		path.setTranslateX(x);
+		path.setTranslateY(y);
+		path.setStroke(a.emrTrapezeDiago.getStroke());
+		path.setFill(a.emrTrapezeDiago.getFill());
+		manageEvents(path,a);
+		return path;
 	}
 	
 	
@@ -125,5 +148,6 @@ public class EMRShapeFactory {
 	public static void setOrgSceneY(double orgSceneY) {
 		EMRShapeFactory.orgSceneY = orgSceneY;
 	}
+
 	
 }

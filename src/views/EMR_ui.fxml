@@ -10,145 +10,140 @@
 <?import javafx.scene.shape.Polygon?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AppController">
-   <top>
-      <VBox prefHeight="65.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <MenuBar>
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                        <Menu mnemonicParsing="false" text="Open">
-                          <items>
-                              <MenuItem fx:id="menuOpenXML" mnemonicParsing="false" onAction="#openMenuXMLClicked" text="OpenXML" />
-                              <MenuItem fx:id="menuOpenTXT" mnemonicParsing="false" onAction="#openMenuTXTClicked" text="OpenTXT" />
-                          </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Save">
-                          <items>
-                              <MenuItem fx:id="menuSaveXML" mnemonicParsing="false" onAction="#saveMenuXMLClicked" text="SaveXML" />
-                              <MenuItem fx:id="menuSaveTXT" mnemonicParsing="false" onAction="#saveMenuTXTClicked" text="SaveTXT" />
-                          </items>
-                        </Menu>
-                    	<MenuItem fx:id="menuQuit" mnemonicParsing="false" onAction="#quitMenuClicked" text="Quit" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem fx:id="menuUndo" mnemonicParsing="false" onAction="#undoMenuClicked" text="Undo" />
-                    <MenuItem fx:id="menuRedo" mnemonicParsing="false" onAction="#redoMenuClicked" text="Redo" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#aboutMenuClicked" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-            <ToolBar prefHeight="40.0" prefWidth="200.0">
-              <items>
-                <Button fx:id="dessinBtn" mnemonicParsing="false" onAction="#dessinModeClicked" text="Mode Dessin" />
-                  <Button fx:id="connexionBtn" mnemonicParsing="false" onAction="#connexionModeClicked" text="Mode Connexion" />
-              </items>
-            </ToolBar>
-         </children>
-      </VBox>
-   </top>
-   <bottom>
-      <HBox prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: E5E5E5;" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="statusBar" alignment="CENTER" text="Ceci est la status bar contenue dans un label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-         </children>
-         <padding>
-            <Insets top="5.0" />
-         </padding>
-      </HBox>
-   </bottom>
-   <center>
-      <Pane fx:id="emrPane" prefHeight="238.0" prefWidth="259.0" BorderPane.alignment="CENTER" />
-   </center>
-   <left>
-      <GridPane fx:id="gridPalette" alignment="CENTER" prefHeight="313.0" prefWidth="135.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="92.0" minHeight="1.0" prefHeight="34.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseRelease" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <Circle fx:id="emrCircle" fill="GOLD" onMouseReleased="#circleMouseRelease" radius="20.0" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Rectangle fx:id="emrSquare" arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="40.0" onMouseReleased="#rectMouseRelease" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" width="40.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <Polygon fx:id="emrHexagon" fill="EE82EE" onMouseReleased="#hexagonMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-			<points>
-                <Double fx:value="12.0" />
-                <Double fx:value="0.0" />
-                <Double fx:value="32.0" />
-                <Double fx:value="0.0" />
-                <Double fx:value="44.0" />
-                <Double fx:value="20.0" />
-                <Double fx:value="32.0" />
-                <Double fx:value="40.0" />
-                <Double fx:value="12.0" />
-                <Double fx:value="40.0" />
-                <Double fx:value="0.0" />
-                <Double fx:value="20.0" />
-            </points>
-        </Polygon>
-            <Group GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
-                  <Line endY="40.0" startX="18.0" />
-               </children>
-            </Group>
-        
-              <Polygon fx:id="emrParallelogramme1" fill="#87CEEB" onMouseReleased="#trapezepleinMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
-			<points>
-                <Double fx:value="0.0" />
-                <Double fx:value="0.0" />
-                <Double fx:value="30.0" />
-                <Double fx:value="0.0" />
-                <Double fx:value="38.0" />
-                <Double fx:value="38.0" />
-                <Double fx:value="8.0" />
-                <Double fx:value="38.0" />
-            </points>
-        </Polygon>
-        <Polygon fx:id="emrParallelogramme2" fill="#0000FF" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-			<points>
-                <Double fx:value="0.0" />
-                <Double fx:value="0.0" />
-                <Double fx:value="30.0" />
-                <Double fx:value="0.0" />
-                <Double fx:value="38.0" />
-                <Double fx:value="38.0" />
-                <Double fx:value="8.0" />
-                <Double fx:value="38.0" />
-            </points>
-        </Polygon>
-            <Path fill="#87CEEB" stroke="BLUE" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="TOP">
-                <elements>
-                    <MoveTo />
-                    <LineTo x="20.0" />
-                  <LineTo x="30.0" y="38.0" />
-                  <LineTo x="10.0" y="38.0" />
-                  <LineTo />
-                  <LineTo x="30.0" y="38.0" />
-                </elements>
-            </Path>
-         </children>
-      </GridPane>
-   </left>
+	<top>
+		<VBox prefHeight="65.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+			<children>
+				<MenuBar>
+					<menus>
+						<Menu mnemonicParsing="false" text="File">
+							<items>
+								<Menu mnemonicParsing="false" text="Open">
+									<items>
+										<MenuItem fx:id="menuOpenXML" mnemonicParsing="false" onAction="#openMenuXMLClicked" text="OpenXML" />
+										<MenuItem fx:id="menuOpenTXT" mnemonicParsing="false" onAction="#openMenuTXTClicked" text="OpenTXT" />
+									</items>
+								</Menu>
+								<Menu mnemonicParsing="false" text="Save">
+									<items>
+										<MenuItem fx:id="menuSaveXML" mnemonicParsing="false" onAction="#saveMenuXMLClicked" text="SaveXML" />
+										<MenuItem fx:id="menuSaveTXT" mnemonicParsing="false" onAction="#saveMenuTXTClicked" text="SaveTXT" />
+									</items>
+								</Menu>
+								<MenuItem fx:id="menuQuit" mnemonicParsing="false" onAction="#quitMenuClicked" text="Quit" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Edit">
+							<items>
+								<MenuItem fx:id="menuUndo" mnemonicParsing="false" onAction="#undoMenuClicked" text="Undo" />
+								<MenuItem fx:id="menuRedo" mnemonicParsing="false" onAction="#redoMenuClicked" text="Redo" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Help">
+							<items>
+								<MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#aboutMenuClicked" text="About" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+				<ToolBar prefHeight="40.0" prefWidth="200.0">
+					<items>
+						<Button fx:id="dessinBtn" mnemonicParsing="false" onAction="#dessinModeClicked" text="Mode Dessin" />
+						<Button fx:id="connexionBtn" mnemonicParsing="false" onAction="#connexionModeClicked" text="Mode Connexion" />
+					</items>
+				</ToolBar>
+			</children>
+		</VBox>
+	</top>
+	<bottom>
+		<HBox prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: E5E5E5;" BorderPane.alignment="CENTER">
+			<children>
+				<Label fx:id="statusBar" alignment="CENTER" text="Ceci est la status bar contenue dans un label">
+					<padding>
+						<Insets left="10.0" />
+					</padding>
+				</Label>
+			</children>
+			<padding>
+				<Insets top="5.0" />
+			</padding>
+		</HBox>
+	</bottom>
+	<center>
+		<Pane fx:id="emrPane" prefHeight="238.0" prefWidth="259.0" BorderPane.alignment="CENTER" />
+	</center>
+	<left>
+		<GridPane fx:id="gridPalette" alignment="CENTER" prefHeight="313.0" prefWidth="135.0" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="92.0" minHeight="1.0" prefHeight="34.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+				<RowConstraints />
+			</rowConstraints>
+			<children>
+				<Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseRelease" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+				<Circle fx:id="emrCircle" fill="GOLD" onMouseReleased="#circleMouseRelease" radius="20.0" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+				<Rectangle fx:id="emrSquare" arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="40.0" onMouseReleased="#rectMouseRelease" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" width="40.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+				<Polygon fx:id="emrHexagon" fill="EE82EE" onMouseReleased="#hexagonMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+					<points>
+						<Double fx:value="12.0" />
+						<Double fx:value="0.0" />
+						<Double fx:value="32.0" />
+						<Double fx:value="0.0" />
+						<Double fx:value="44.0" />
+						<Double fx:value="20.0" />
+						<Double fx:value="32.0" />
+						<Double fx:value="40.0" />
+						<Double fx:value="12.0" />
+						<Double fx:value="40.0" />
+						<Double fx:value="0.0" />
+						<Double fx:value="20.0" />
+					</points>
+				</Polygon>
+
+				<Polygon fx:id="emrTrapeze" fill="#87CEEB" onMouseReleased="#trapezeMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+					<points>
+						<Double fx:value="0.0" />
+						<Double fx:value="0.0" />
+						<Double fx:value="30.0" />
+						<Double fx:value="0.0" />
+						<Double fx:value="38.0" />
+						<Double fx:value="38.0" />
+						<Double fx:value="8.0" />
+						<Double fx:value="38.0" />
+					</points>
+				</Polygon>
+				<Polygon fx:id="emrTrapezePlein" fill="#0000FF" onMouseReleased="#trapezePleinMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+					<points>
+						<Double fx:value="0.0" />
+						<Double fx:value="0.0" />
+						<Double fx:value="30.0" />
+						<Double fx:value="0.0" />
+						<Double fx:value="38.0" />
+						<Double fx:value="38.0" />
+						<Double fx:value="8.0" />
+						<Double fx:value="38.0" />
+					</points>
+				</Polygon>
+				<Path fx:id="emrTrapezeDiago" fill="#87CEEB" onMouseReleased="#trapezeDiagoMouseRelease" stroke="BLUE" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+					<elements>
+						<MoveTo />
+						<LineTo x="20.0" />
+						<LineTo x="30.0" y="38.0" />
+						<LineTo x="10.0" y="38.0" />
+						<LineTo />
+						<LineTo x="30.0" y="38.0" />
+					</elements>
+				</Path>
+			</children>
+		</GridPane>
+	</left>
 </BorderPane>
