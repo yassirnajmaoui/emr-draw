@@ -167,7 +167,7 @@
                   <ClosePath />
                 </elements>
             </Path>
-            <Path fx:id="emrTripleCarree" fill="#FFD700" stroke="#FF0000" strokeType="INSIDE" onMouseReleased="#tripleCarreeMouseRelease" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Path fx:id="emrTripleCarree" fill="#FFD700" onMouseReleased="#tripleCarreeMouseRelease" stroke="#FF0000" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <elements>
                   <MoveTo />
                   <HLineTo x="32.0" />
@@ -185,6 +185,20 @@
                   <HLineTo x="16.0" />
                   <VLineTo y="16.0" />
                </elements>
+            </Path>
+            <Path fx:id="emrDoubleTrapeze" fill="DODGERBLUE" style="-fx-cursor: hand;" stroke="BLACK" onMouseReleased="#doubleTrapezeMouseRelease" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <elements>
+                    <MoveTo />
+                  <HLineTo x="24.0" />
+                  <LineTo x="37.0" y="25.0" />
+                  <HLineTo x="13.0" />
+                  <LineTo />
+                  <MoveTo x="12.0" y="10.0" />
+                  <HLineTo x="36.0" />
+                  <LineTo x="49.0" y="35.0" />
+                  <HLineTo x="25.0" />
+                  <LineTo x="12.0" y="10.0" />
+                </elements>
             </Path>
 			</children>
 		</GridPane>

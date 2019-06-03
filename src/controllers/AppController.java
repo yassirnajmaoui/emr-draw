@@ -42,6 +42,8 @@ public class AppController {
 	@FXML
 	public Polygon emrTrapeze; // Shape #8
 	@FXML
+	public Path emrDoubleTrapeze; // Shape #9
+	@FXML
 	public Polygon emrTrapezePlein; // Shape #10
 	@FXML
 	public Polygon emrHexagon; // Shape #11
@@ -126,6 +128,12 @@ public class AppController {
 	@FXML
 	public void tripleCarreeMouseRelease(MouseEvent e) {
 		addNode(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
+	
+	@FXML
+	public void doubleTrapezeMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.DOUBLETRAPEZE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 		
