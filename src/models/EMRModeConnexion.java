@@ -11,7 +11,7 @@ import javafx.scene.shape.Shape;
 public class EMRModeConnexion implements EMRMode {
 
 	private Line currentLine;
-	private EMRShape currentShape;
+	private Shape currentShape;
 
 	@Override
 	public void handleDragOn(MouseEvent t, AppController a) {
@@ -26,25 +26,25 @@ public class EMRModeConnexion implements EMRMode {
 	public void handleDragOver(MouseEvent t, AppController a) {
 		//System.out.println("Clicked! " + t.getSource() + "\nPrevious: " + currentShape);
 		if (t.getSource() instanceof Shape && t.getSource() != null && currentShape == null) {
-			currentShape = new EMRShape((Shape) t.getSource());
-			currentShape.getShape().setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
+			currentShape = ((Shape) t.getSource());
+			currentShape.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
 		} else if ((Shape) t.getSource() != null) {
-			if(currentShape.getShape() != t.getSource())
+			if(currentShape != t.getSource())
 			{
 				// Starting to connect stuff
-				a.addNode(new EMRShape(connect(currentShape, new EMRShape((Shape) t.getSource()))));
+				a.addNode(new EMRShape(connect(currentShape, (Shape) t.getSource()),a));
 			}
-			currentShape.getShape().setStyle("");
+			currentShape.setStyle("");
 			currentShape = null;
 		}
 	}
 
-	private static Line connect(EMRShape c1, EMRShape c2) {
+	private static Line connect(Shape c1, Shape c2) {
 		Line line = new Line();
-		line.startXProperty().bind(c1.getXProperty());
-		line.startYProperty().bind(c1.getYProperty());
-		line.endXProperty().bind(c2.getXProperty());
-		line.endYProperty().bind(c2.getYProperty());
+		line.startXProperty().bind(c1.translateXProperty());
+		line.startYProperty().bind(c1.translateYProperty());
+		line.endXProperty().bind(c2.translateXProperty());
+		line.endYProperty().bind(c2.translateYProperty());
 		return line;
 	}
 

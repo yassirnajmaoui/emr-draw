@@ -2,8 +2,6 @@ package models.iterator;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.List;
-import javafx.scene.shape.Shape;
 import models.EMRShape;
 
 public class ShapeContainer implements Container {
@@ -20,6 +18,7 @@ public class ShapeContainer implements Container {
 	public void addShape(EMRShape s) { shapeArray.add(s); }
 
 	public int getSize() { return shapeArray.size(); }
+	public void  clearShapes() { this.shapeArray.clear(); }
 
 	public EMRShape getElem(int index) { return shapeArray.get(index); }
 
