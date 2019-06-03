@@ -29,3 +29,16 @@ public class EMRApplication extends Application {
 		}
 	}
 }
+/*
+ * ------------------------------------------------------------------------------------------
+TODO:
+	- Faire les autres formes
+	- Drag & drop sur les groupes
+	- Rapport MVC JavaFX versus MVC classique
+	- Faire plusieurs projets/intégrations avec chaque prototype
+	- Rapport UML
+	- S'assurer que les design patterns utilisés sont spécifiés selon chaque classe
+	- Remettre le projet sous forme de commit sur le git de l'école
+	- Vérifier que l'ouverture du projet fonctionnne sur les ordis de l'école
+* ------------------------------------------------------------------------------------------
+*/

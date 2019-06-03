@@ -96,8 +96,8 @@ public class AppController {
 
 	@FXML
 	public void connexionModeClicked(ActionEvent e) {
-		System.out.println("Mode Connexion clicked");
-		statusBar.setText("Mode Connexion clicked");
+		System.out.println("Mode Connexion clicked: Des connexions peuvent désormais être établies");
+		statusBar.setText("Mode Connexion clicked: Des connexions peuvent désormais être établies");
 		connexionBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px" );
 		dessinBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
 		gridPalette.setDisable(true);
@@ -106,8 +106,8 @@ public class AppController {
 
 	@FXML
 	public void dessinModeClicked(ActionEvent e) {
-		System.out.println("Mode Dessin clicked");
-		statusBar.setText("Mode Dessin clicked");
+		System.out.println("Mode Dessin clicked: Des formes peuvent désormais être drag & dropped dans le canevas");
+		statusBar.setText("Mode Dessin clicked: Des formes peuvent désormais être drag & dropped dans le canevas");
 		connexionBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
 		dessinBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px");
 		gridPalette.setDisable(false);
