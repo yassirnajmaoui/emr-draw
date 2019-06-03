@@ -45,6 +45,8 @@ public class AppController {
 	@FXML
 	public Polygon emrTrapeze; // Shape #8
 	@FXML
+	public Path emrDoubleTrapeze; // Shape #9
+	@FXML
 	public Polygon emrTrapezePlein; // Shape #10
 	@FXML
 	public Polygon emrHexagon; // Shape #11
@@ -56,6 +58,8 @@ public class AppController {
 	public Rectangle emrSquare; // Shape #14
 	@FXML
 	public Path emrRectangleDiago; // Shape #15
+	@FXML
+	public Path emrDoubleCercle; // Shape #16
 	@FXML
 	public Label statusBar;
 	@FXML
@@ -133,13 +137,26 @@ public class AppController {
 	@FXML
 	public void tripleCarreeMouseRelease(MouseEvent e) {
 		addShape(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addNode(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this)); 
+	}
+	
+	@FXML
+	public void doubleTrapezeMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.DOUBLETRAPEZE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
+	
+	@FXML
+	public void doubleCercleMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.DOUBLECERCLE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 		
 	@FXML
 	public void connexionModeClicked(ActionEvent e) {
-		System.out.println("Mode Connexion clicked: Des connexions peuvent désormais être établies");
-		statusBar.setText("Mode Connexion clicked: Des connexions peuvent désormais être établies");
+		System.out.println("Mode Connexion clicked: Des connexions peuvent dï¿½sormais ï¿½tre ï¿½tablies");
+		statusBar.setText("Mode Connexion clicked: Des connexions peuvent dï¿½sormais ï¿½tre ï¿½tablies");
 		connexionBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px" );
 		dessinBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
 		gridPalette.setDisable(true);
@@ -148,8 +165,8 @@ public class AppController {
 
 	@FXML
 	public void dessinModeClicked(ActionEvent e) {
-		System.out.println("Mode Dessin clicked: Des formes peuvent désormais être drag & dropped dans le canevas");
-		statusBar.setText("Mode Dessin clicked: Des formes peuvent désormais être drag & dropped dans le canevas");
+		System.out.println("Mode Dessin clicked: Des formes peuvent dï¿½sormais ï¿½tre drag & dropped dans le canevas");
+		statusBar.setText("Mode Dessin clicked: Des formes peuvent dï¿½sormais ï¿½tre drag & dropped dans le canevas");
 		connexionBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
 		dessinBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px");
 		gridPalette.setDisable(false);
@@ -228,7 +245,7 @@ public class AppController {
  */
 
 /*
- * code temporaire à deleter quand on est sûr que c'est ok d'instancier les
+ * code temporaire ï¿½ deleter quand on est sï¿½r que c'est ok d'instancier les
  * formes de la palette dans le fxml public class Hexagon {
  * 
  * public Hexagon(){;}

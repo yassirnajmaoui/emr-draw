@@ -186,6 +186,30 @@
                   <VLineTo y="16.0" />
                </elements>
             </Path>
+            <Path fx:id="emrDoubleTrapeze" fill="DODGERBLUE" stroke="BLACK" onMouseReleased="#doubleTrapezeMouseRelease" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <elements>
+                    <MoveTo />
+                  <HLineTo x="24.0" />
+                  <LineTo x="37.0" y="25.0" />
+                  <HLineTo x="13.0" />
+                  <LineTo />
+                  <MoveTo x="12.0" y="10.0" />
+                  <HLineTo x="36.0" />
+                  <LineTo x="49.0" y="35.0" />
+                  <HLineTo x="25.0" />
+                  <LineTo x="12.0" y="10.0" />
+                </elements>
+            </Path>
+            <Path fx:id="emrDoubleCercle" fill="#FFD700" stroke="#FF0000" onMouseReleased="#doubleCercleMouseRelease" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <elements>
+                    <MoveTo />
+                    <ArcTo radiusX="27.0" radiusY="27.0" x="54.0" />
+                  <ArcTo radiusX="27.0" radiusY="27.0" />
+                  <MoveTo y="21.0" />
+                  <ArcTo radiusX="27.0" radiusY="27.0" x="54.0" y="21.0" />
+                  <ArcTo radiusX="27.0" radiusY="27.0" y="21.0" />
+                </elements>
+            </Path>
 			</children>
 		</GridPane>
 	</left>

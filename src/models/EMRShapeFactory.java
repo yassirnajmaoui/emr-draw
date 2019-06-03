@@ -141,6 +141,28 @@ public class EMRShapeFactory {
 		return path;
 	}
 	
+	public static Path createDoubleTrapeze(double x, double y, AppController a) {
+		Path path = new Path(a.emrDoubleTrapeze.getElements());
+		path.setFillRule(a.emrDoubleTrapeze.getFillRule());
+		path.setTranslateX(x);
+		path.setTranslateY(y);
+		path.setStroke(a.emrDoubleTrapeze.getStroke());
+		path.setFill(a.emrDoubleTrapeze.getFill());
+		manageEvents(path,a);
+		return path;
+	}
+	
+	public static Path createDoubleCercle(double x, double y, AppController a) {
+		Path path = new Path(a.emrDoubleCercle.getElements());
+		path.setFillRule(a.emrDoubleCercle.getFillRule());
+		path.setTranslateX(x);
+		path.setTranslateY(y);
+		path.setStroke(a.emrDoubleCercle.getStroke());
+		path.setFill(a.emrDoubleCercle.getFill());
+		manageEvents(path,a);
+		return path;
+	}
+	
 	private static void manageEvents(Shape n, AppController a)
 	{
 		n.setCursor(Cursor.HAND);
