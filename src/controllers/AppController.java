@@ -3,13 +3,9 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Effect;
-import javafx.scene.effect.Shadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Polygon;
@@ -19,7 +15,6 @@ import models.EMRModeConnexion;
 import models.EMRModeDessin;
 import models.EMRShape;
 import models.EMRShapeFactory;
-import models.EMRShapeFactory.eShape;
 import models.FileStrategy;
 import models.TXTStrategy;
 import models.XMLStrategy;
@@ -94,6 +89,12 @@ public class AppController {
 				this));
 	}
 
+	@FXML
+	public void trapezepleinMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.TRAPEZEPLEIN_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
+	
 	@FXML
 	public void connexionModeClicked(ActionEvent e) {
 		System.out.println("Mode Connexion clicked: Des connexions peuvent désormais être établies");

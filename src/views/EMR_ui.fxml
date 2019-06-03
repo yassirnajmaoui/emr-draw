@@ -132,7 +132,7 @@
                </children>
             </Group>
         
-              <Polygon fx:id="emrParallelogramme1" fill="#87CEEB" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+              <Polygon fx:id="emrParallelogramme1" fill="#87CEEB" onMouseReleased="#trapezepleinMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
 			<points>
                 <Double fx:value="0.0" />
                 <Double fx:value="0.0" />

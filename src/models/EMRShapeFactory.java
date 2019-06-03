@@ -18,12 +18,12 @@ public class EMRShapeFactory {
 
 	private static double orgSceneX, orgSceneY;
 	private static boolean dragging;
-	public static final String ELLIPSE_ID = "Ellipse";
-	public static final String CIRCLE_ID = "Circle";
-	public static final String SQUARE_ID = "Square";
-	public static final String HEXAGON_ID = "Hexagon";
-	public static final String LINE_ID = "Line";
-	public static enum eShape{ELLIPSE,CIRCLE,SQUARE,HEXAGON,LINE}
+	public static final String ELLIPSE_ID = "ovalevert";
+	public static final String CIRCLE_ID = "cercle";
+	public static final String SQUARE_ID = "carre";
+	public static final String HEXAGON_ID = "hexagone";
+	public static final String TRAPEZEPLEIN_ID = "trapezeplein";
+	public static final String LINE_ID = "connexion";
 	
 	public static Circle createCircle(double x, double y, AppController a) {
 		Circle circle = new Circle(a.emrCircle.getRadius());
@@ -64,6 +64,17 @@ public class EMRShapeFactory {
 		manageEvents(poly,a);
 		return poly;
 	}
+	public static Polygon createTrapezePlein(double x, double y, AppController a) {
+		Polygon poly = new Polygon();
+		poly.getPoints().addAll(a.emrParallelogramme1.getPoints());
+		poly.setTranslateX(x);
+		poly.setTranslateY(y);
+		poly.setStroke(a.emrParallelogramme1.getStroke());
+		poly.setFill(a.emrParallelogramme1.getFill());
+		manageEvents(poly,a);
+		return poly;
+	}
+	
 	
 	private static void manageEvents(Shape n, AppController a)
 	{

@@ -8,21 +8,15 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
-import models.EMRShapeFactory.eShape;
 
 public class EMRShape {
 
 	private String identifier;
 
-	// @XStreamOmitField
 	private Shape shape;
 
 	public Shape getShape() {
 		return shape;
-	}
-
-	public void setShape(Shape shape) {
-		this.shape = shape;
 	}
 
 	public EMRShape(String id, double x, double y, AppController a) {
@@ -39,6 +33,9 @@ public class EMRShape {
 		case EMRShapeFactory.HEXAGON_ID:
 			this.shape = EMRShapeFactory.createHexagon(x, y, a);
 			break;
+		case EMRShapeFactory.TRAPEZEPLEIN_ID:
+			this.shape = EMRShapeFactory.createTrapezePlein(x, y, a);
+			break;
 		default:
 			return;
 		}
@@ -52,8 +49,6 @@ public class EMRShape {
 		this.shape = s;
 		this.identifier = EMRShapeFactory.LINE_ID;
 		a.emrPane.getChildren().add(this.shape);
-		// this.xPos = ((Line) this.shape).getStartX();
-		// this.yPos = ((Line) this.shape).getStartY();
 	}
 
 	public double getX() {
@@ -68,7 +63,6 @@ public class EMRShape {
 	public double getY() {
 		if (identifier != EMRShapeFactory.LINE_ID) {
 			double tmp = this.shape.getTranslateY();
-			// this.yPos = tmp;
 			return tmp;
 		} else {
 			return ((Line) this.shape).getStartY();
@@ -78,20 +72,16 @@ public class EMRShape {
 	public void setX(double x) {
 		if (identifier != EMRShapeFactory.LINE_ID) {
 			this.shape.setTranslateX(x);
-			// this.xPos = x;
 		} else {
 			((Line) this.shape).setStartX(x);
-			// this.xPos = x;
 		}
 	}
 
 	public void setY(double y) {
 		if (identifier != EMRShapeFactory.LINE_ID) {
 			shape.setTranslateY(y);
-			// this.yPos = y;
 		} else {
 			((Line) this.shape).setStartY(y);
-			// this.yPos = y;
 		}
 	}
 
