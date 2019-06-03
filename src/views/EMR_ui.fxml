@@ -143,6 +143,17 @@
 						<LineTo x="30.0" y="38.0" />
 					</elements>
 				</Path>
+            <Path fx:id="emrRectangleDiago" fill="GOLD" onMouseReleased="#rectangleDiagoMouseRelease" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+               <elements>
+                  <MoveTo />
+                  <LineTo x="18.0" />
+                  <LineTo x="18.0" y="40.0" />
+                  <LineTo y="40.0" />
+                  <LineTo />
+                  <MoveTo x="18.0" />
+                  <LineTo y="40.0" />
+               </elements>
+            </Path>
 			</children>
 		</GridPane>
 	</left>

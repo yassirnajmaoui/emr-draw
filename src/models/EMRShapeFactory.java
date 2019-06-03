@@ -19,13 +19,22 @@ public class EMRShapeFactory {
 
 	private static double orgSceneX, orgSceneY;
 	private static boolean dragging;
-	public static final String ELLIPSE_ID = "ovalevert";
-	public static final String CIRCLE_ID = "cercle";
-	public static final String SQUARE_ID = "carre";
-	public static final String HEXAGON_ID = "hexagone";
-	public static final String TRAPEZE_ID = "trapeze";
-	public static final String TRAPEZEDIAGO_ID = "trapezediago";
-	public static final String TRAPEZEPLEIN_ID = "trapezeplein";
+	public static final String FLECHENOIRE_ID = "flecheNoire"; // Shape #1
+	public static final String FLECHEPOINTILLEE_ID = "flechePointillee"; // Shape #2
+	public static final String FLECHEROUGE_ID = "flecheRouge"; // Shape #3
+	public static final String FLECHE90POINTILLEE_ID = "fleche90pointillee"; // Shape #4
+	public static final String FLECHE90_ID = "fleche90"; // Shape #5
+	public static final String ELLIPSE_ID = "ovalevert"; // Shape #6
+	public static final String TRAPEZEDIAGO_ID = "trapezediago"; // Shape #7
+	public static final String TRAPEZE_ID = "trapeze"; // Shape #8
+	public static final String DOUBLETRAPEZE_ID = "doubletrapeze"; // Shape #9
+	public static final String TRAPEZEPLEIN_ID = "trapezeplein"; // Shape #10
+	public static final String HEXAGON_ID = "hexagone"; // Shape #11
+	public static final String TRIPLECARREE_ID = "triplecarree"; // Shape #12
+	public static final String CIRCLE_ID = "cercle"; // Shape #13
+	public static final String SQUARE_ID = "carre"; // Shape #14
+	public static final String RECTANGLEDIAGO_ID = "rectanglediago"; // Shape #15
+	public static final String DOUBLECERCLE_ID = "doublecercle"; // Shape #16
 	public static final String LINE_ID = "connexion";
 	
 	public static Circle createCircle(double x, double y, AppController a) {
@@ -87,6 +96,7 @@ public class EMRShapeFactory {
 		manageEvents(poly,a);
 		return poly;
 	}
+	
 	public static Path createTrapezeDiago(double x, double y, AppController a) {
 		Path path = new Path(a.emrTrapezeDiago.getElements());
 		path.setFillRule(a.emrTrapezeDiago.getFillRule());
@@ -98,6 +108,16 @@ public class EMRShapeFactory {
 		return path;
 	}
 	
+	public static Path createRectangleDiago(double x, double y, AppController a) {
+		Path path = new Path(a.emrRectangleDiago.getElements());
+		path.setFillRule(a.emrRectangleDiago.getFillRule());
+		path.setTranslateX(x);
+		path.setTranslateY(y);
+		path.setStroke(a.emrRectangleDiago.getStroke());
+		path.setFill(a.emrRectangleDiago.getFill());
+		manageEvents(path,a);
+		return path;
+	}
 	
 	private static void manageEvents(Shape n, AppController a)
 	{

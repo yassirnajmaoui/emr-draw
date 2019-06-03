@@ -36,15 +36,19 @@ public class AppController {
 	@FXML
 	public Ellipse emrEllipse; // Shape #6
 	@FXML
+	public Path emrTrapezeDiago; // Shape #7
+	@FXML
+	public Polygon emrTrapeze; // Shape #8
+	@FXML
+	public Polygon emrTrapezePlein; // Shape #10
+	@FXML
 	public Polygon emrHexagon; // Shape #11
 	@FXML
 	public Circle emrCircle; // Shape #13
 	@FXML
 	public Rectangle emrSquare; // Shape #14
 	@FXML
-	public Polygon emrTrapeze;
-	@FXML
-	public Polygon emrTrapezePlein;
+	public Path emrRectangleDiago; // Shape #15
 	@FXML
 	public Label statusBar;
 	@FXML
@@ -55,8 +59,7 @@ public class AppController {
 	public Pane emrPane;
 	@FXML
 	public GridPane gridPalette;
-	@FXML
-	public Path emrTrapezeDiago;
+
 
 	public AppController() {
 		emrShapes = new ShapeContainer();
@@ -105,6 +108,12 @@ public class AppController {
 		addNode(new EMRShape(EMRShapeFactory.TRAPEZEPLEIN_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
+	@FXML
+	public void rectangleDiagoMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.RECTANGLEDIAGO_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
+	
 	
 	@FXML
 	public void connexionModeClicked(ActionEvent e) {

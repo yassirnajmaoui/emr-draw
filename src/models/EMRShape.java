@@ -42,6 +42,9 @@ public class EMRShape {
 		case EMRShapeFactory.TRAPEZEPLEIN_ID:
 			this.shape = EMRShapeFactory.createTrapezePlein(x, y, a);
 			break;
+		case EMRShapeFactory.RECTANGLEDIAGO_ID:
+			this.shape = EMRShapeFactory.createRectangleDiago(x, y, a);
+			break;
 		default:
 			return;
 		}

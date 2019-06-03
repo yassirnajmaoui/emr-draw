@@ -33,7 +33,7 @@ public class EMRApplication extends Application {
  * ------------------------------------------------------------------------------------------
 TODO:
 	- Faire les autres formes
-	- Drag & drop sur les groupes
+	- Drag & drop sur les path
 	- Rapport MVC JavaFX versus MVC classique
 	- Faire plusieurs projets/intégrations avec chaque prototype
 	- Rapport UML
