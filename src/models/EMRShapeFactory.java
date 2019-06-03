@@ -157,13 +157,13 @@ public class EMRShapeFactory {
 		n.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {
-				AppController.getMode().handleDragWhile(t,a);
+				a.getMode().handleDragWhile(t,a);
 			}
 		});
 		n.setOnMouseReleased(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {
-				AppController.getMode().handleDragOver(t,a);
+				a.getMode().handleDragOver(t,a);
 			}
 		});
 	}

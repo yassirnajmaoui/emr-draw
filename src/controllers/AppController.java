@@ -11,6 +11,7 @@ import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
+import models.EMRConnexion;
 import models.EMRMode;
 import models.EMRModeConnexion;
 import models.EMRModeDessin;
@@ -19,6 +20,7 @@ import models.EMRShapeFactory;
 import models.FileStrategy;
 import models.TXTStrategy;
 import models.XMLStrategy;
+import models.iterator.ConnexionContainer;
 import models.iterator.ShapeContainer;
 
 public class AppController {
@@ -26,8 +28,9 @@ public class AppController {
 	static EMRMode mode;
 	public FileStrategy myStrategy;
 	public ShapeContainer emrShapes;
+	public ConnexionContainer emrConnexions;
 
-	public static EMRMode getMode() {
+	public EMRMode getMode() {
 		if (mode == null)
 			mode = new EMRModeDessin();
 		return mode;
@@ -67,65 +70,69 @@ public class AppController {
 
 	public AppController() {
 		emrShapes = new ShapeContainer();
+		emrConnexions = new ConnexionContainer();
 	}
 
-	public void addNode(EMRShape n) {
+	public void addShape(EMRShape n) {
 		emrShapes.addShape(n);
+	}
+	public void addConnexion(EMRConnexion n) {
+		emrConnexions.addConnexion(n);
 	}
 
 	@FXML
 	public void circleMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.CIRCLE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.CIRCLE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 
 	@FXML
 	public void rectMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.SQUARE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.SQUARE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 
 	@FXML
 	public void ellipseMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.ELLIPSE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.ELLIPSE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 
 	@FXML
 	public void hexagonMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.HEXAGON_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.HEXAGON_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 
 	@FXML
 	public void trapezeMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.TRAPEZE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.TRAPEZE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 	@FXML
 	public void trapezeDiagoMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.TRAPEZEDIAGO_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.TRAPEZEDIAGO_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 	@FXML
 	public void trapezePleinMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.TRAPEZEPLEIN_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.TRAPEZEPLEIN_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 	@FXML
 	public void rectangleDiagoMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.RECTANGLEDIAGO_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.RECTANGLEDIAGO_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 	@FXML
 	public void flecheNoireMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.FLECHENOIRE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.FLECHENOIRE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 	
 	@FXML
 	public void tripleCarreeMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 		
@@ -136,7 +143,7 @@ public class AppController {
 		connexionBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px" );
 		dessinBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
 		gridPalette.setDisable(true);
-		mode = new EMRModeConnexion(); 
+		mode = new EMRModeConnexion();
 	}
 
 	@FXML
@@ -153,6 +160,7 @@ public class AppController {
 	public void openMenuXMLClicked(ActionEvent a) {
 		System.out.println("Menu File-OpenXML clicked");
 		statusBar.setText("Menu File-OpenXML clicked");
+		// TODO:OPEN XML
 	}
 
 	@FXML
@@ -163,7 +171,7 @@ public class AppController {
 		this.emrShapes.clearShapes();
 		emrPane.getChildren().clear();
 		myStrategy = new TXTStrategy();
-		myStrategy.openFile("myTXTFile.txt", this.emrShapes, this);
+		myStrategy.openFile("myTXTFile.txt", this.emrShapes, this.emrConnexions, this);
 	}
 
 	@FXML
@@ -171,7 +179,7 @@ public class AppController {
 		System.out.println("Menu File-save clicked");
 		statusBar.setText("Menu File-save clicked");
 		myStrategy = new XMLStrategy();
-		myStrategy.saveFile("myXMLFile.xml", emrShapes);
+		myStrategy.saveFile("myXMLFile.xml", emrShapes, emrConnexions);
 	}
 
 	@FXML
@@ -179,7 +187,7 @@ public class AppController {
 		System.out.println("Menu File-save clicked");
 		statusBar.setText("Menu File-save clicked");
 		myStrategy = new TXTStrategy();
-		myStrategy.saveFile("myTXTFile.txt", emrShapes);
+		myStrategy.saveFile("myTXTFile.txt", emrShapes, emrConnexions);
 	}
 
 	@FXML

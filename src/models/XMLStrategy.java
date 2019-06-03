@@ -8,6 +8,7 @@ import java.io.FileWriter;
 
 import controllers.AppController;
 import javafx.scene.shape.Line;
+import models.iterator.ConnexionContainer;
 import models.iterator.ShapeContainer;
 import models.iterator.ShapeIterator;
 
@@ -17,7 +18,7 @@ import models.iterator.ShapeIterator;
 public class XMLStrategy implements FileStrategy {
 
 	@Override
-	public void saveFile(String filename, ShapeContainer shapeArray) {
+	public void saveFile(String filename, ShapeContainer shapeArray, ConnexionContainer connexionArray) {/*
 		String dataXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 		ShapeIterator it = (ShapeIterator) shapeArray.getIterator();
 		while (it.hasNext()) {
@@ -41,11 +42,11 @@ public class XMLStrategy implements FileStrategy {
 			e.printStackTrace();
 		}
 		System.out.println("Success...!");
-
+*/
 	}
 
 	@Override
-	public void openFile(String filename, ShapeContainer shapeArray, AppController a) {
+	public void openFile(String filename, ShapeContainer shapeArray,ConnexionContainer connexionArray, AppController a) {/*
 		XMLDecoder decoder = null;
 		try {
 			decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(filename)));
@@ -56,6 +57,6 @@ public class XMLStrategy implements FileStrategy {
 		ShapeContainer tmpShapeContainer;
 		tmpShapeContainer = (ShapeContainer) decoder.readObject();
 		decoder.close();
-		shapeArray.setShapeArray(tmpShapeContainer.getShapeArray());
+		shapeArray.setShapeArray(tmpShapeContainer.getShapeArray());*/
 	}
 }

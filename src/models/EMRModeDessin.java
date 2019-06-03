@@ -26,6 +26,7 @@ public class EMRModeDessin implements EMRMode {
 		c.setTranslateY(c.getTranslateY()+offsetY);
 		EMRShapeFactory.setOrgSceneX(t.getSceneX());
 		EMRShapeFactory.setOrgSceneY(t.getSceneY());
+		//System.out.println(c.hashCode());
 	}
 	  
 	  @Override

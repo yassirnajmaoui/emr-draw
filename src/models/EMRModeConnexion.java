@@ -2,7 +2,6 @@ package models;
 
 import controllers.AppController;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
 
 //--------------------------------------------------
@@ -10,8 +9,8 @@ import javafx.scene.shape.Shape;
 //--------------------------------------------------
 public class EMRModeConnexion implements EMRMode {
 
-	private Line currentLine;
 	private Shape currentShape;
+	private EMRConnexion currentConnexion;
 
 	@Override
 	public void handleDragOn(MouseEvent t, AppController a) {
@@ -31,29 +30,15 @@ public class EMRModeConnexion implements EMRMode {
 		} else if ((Shape) t.getSource() != null) {
 			if(currentShape != t.getSource())
 			{
-				// Starting to connect stuff
-				a.addNode(new EMRShape(connect(currentShape, (Shape) t.getSource()),a));
+				currentConnexion = new EMRConnexion(currentShape, (Shape) t.getSource(),a);
+				System.out.println(currentConnexion.getLine());
+				a.addConnexion(currentConnexion);
 			}
 			currentShape.setStyle("");
 			currentShape = null;
 		}
 	}
 
-	private static Line connect(Shape c1, Shape c2) {
-		Line line = new Line();
-		line.startXProperty().bind(c1.translateXProperty());
-		line.startYProperty().bind(c1.translateYProperty());
-		line.endXProperty().bind(c2.translateXProperty());
-		line.endYProperty().bind(c2.translateYProperty());
-		return line;
-	}
 
-	public Line getCurrentLine() {
-		return currentLine;
-	}
-
-	public void setCurrentLine(Line currentLine) {
-		this.currentLine = currentLine;
-	}
 
 }

@@ -154,7 +154,7 @@
                   <LineTo y="40.0" />
                </elements>
             </Path>
-            <Path fx:id="emrFlecheNoire" fill="BLACK" onMouseReleased="#flecheNoireMouseRelease" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Path fx:id="emrFlecheNoire" style="-fx-cursor:HAND;" fill="BLACK" onMouseReleased="#flecheNoireMouseRelease" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                 <elements>
                     <MoveTo />
                   <LineTo y="1.0" />
@@ -167,7 +167,7 @@
                   <ClosePath />
                 </elements>
             </Path>
-            <Path fx:id="emrTripleCarree" fill="#FFD700" stroke="#FF0000" strokeType="INSIDE" onMouseReleased="#tripleCarreeMouseRelease" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Path fx:id="emrTripleCarree" style="-fx-cursor:HAND;" fill="#FFD700" stroke="#FF0000" strokeType="INSIDE" onMouseReleased="#tripleCarreeMouseRelease" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <elements>
                   <MoveTo />
                   <HLineTo x="32.0" />
