@@ -137,19 +137,18 @@ public class AppController {
 	@FXML
 	public void tripleCarreeMouseRelease(MouseEvent e) {
 		addShape(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
-		addNode(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this)); 
 	}
 	
 	@FXML
 	public void doubleTrapezeMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.DOUBLETRAPEZE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.DOUBLETRAPEZE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 	
 	@FXML
 	public void doubleCercleMouseRelease(MouseEvent e) {
-		addNode(new EMRShape(EMRShapeFactory.DOUBLECERCLE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+		addShape(new EMRShape(EMRShapeFactory.DOUBLECERCLE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 		
