@@ -54,6 +54,9 @@ public class EMRShape {
 		case EMRShapeFactory.DOUBLETRAPEZE_ID:
 			this.shape = EMRShapeFactory.createDoubleTrapeze(x, y, a);
 			break;
+		case EMRShapeFactory.DOUBLECERCLE_ID:
+			this.shape = EMRShapeFactory.createDoubleCercle(x, y, a);
+			break;
 		default:
 			return;
 		}

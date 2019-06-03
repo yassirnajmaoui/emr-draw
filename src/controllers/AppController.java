@@ -56,6 +56,8 @@ public class AppController {
 	@FXML
 	public Path emrRectangleDiago; // Shape #15
 	@FXML
+	public Path emrDoubleCercle; // Shape #16
+	@FXML
 	public Label statusBar;
 	@FXML
 	public Button connexionBtn;
@@ -128,12 +130,18 @@ public class AppController {
 	@FXML
 	public void tripleCarreeMouseRelease(MouseEvent e) {
 		addNode(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
-				this));
+				this)); 
 	}
 	
 	@FXML
 	public void doubleTrapezeMouseRelease(MouseEvent e) {
 		addNode(new EMRShape(EMRShapeFactory.DOUBLETRAPEZE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
+	
+	@FXML
+	public void doubleCercleMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.DOUBLECERCLE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
 		
