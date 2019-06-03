@@ -10,7 +10,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import models.EMRShapeFactory.eShape;
 
-//TODO: ADD CLASS FOR CONNEXIONS
 public class EMRShape {
 
 	private String identifier;
