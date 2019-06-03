@@ -14,12 +14,8 @@ public class EMRShape {
 
 	private String identifier;
 
-	private double xPos;
-
-	private double yPos;
-
-	//@XStreamOmitField
-	private  Shape shape;
+	// @XStreamOmitField
+	private Shape shape;
 
 	public Shape getShape() {
 		return shape;
@@ -32,57 +28,71 @@ public class EMRShape {
 	public EMRShape(String id, double x, double y, AppController a) {
 		switch (id) {
 		case EMRShapeFactory.ELLIPSE_ID:
-			this.shape=EMRShapeFactory.createEllipse(x, y, a);
+			this.shape = EMRShapeFactory.createEllipse(x, y, a);
 			break;
 		case EMRShapeFactory.CIRCLE_ID:
-			this.shape=EMRShapeFactory.createCircle(x, y, a);
+			this.shape = EMRShapeFactory.createCircle(x, y, a);
 			break;
 		case EMRShapeFactory.SQUARE_ID:
-			this.shape=EMRShapeFactory.createRect(x, y, a);
+			this.shape = EMRShapeFactory.createRect(x, y, a);
 			break;
 		case EMRShapeFactory.HEXAGON_ID:
-			this.shape=EMRShapeFactory.createHexagon(x, y, a);
+			this.shape = EMRShapeFactory.createHexagon(x, y, a);
 			break;
-		case EMRShapeFactory.LINE_ID:
-			// We ignore the creation of line,
-			//another method for creating them should be made
-			return;
 		default:
-			break;
+			return;
 		}
+		this.identifier = id;
 		setX(x);
 		setY(y);
-		setDefaultIdentifier();
-		a.emrPane.getChildren().add(this.shape);
-	}
-	public EMRShape(Shape s, AppController a)
-	{
-		this.shape=s;
-		setDefaultIdentifier();
 		a.emrPane.getChildren().add(this.shape);
 	}
 
+	public EMRShape(Line s, AppController a) {
+		this.shape = s;
+		this.identifier = EMRShapeFactory.LINE_ID;
+		a.emrPane.getChildren().add(this.shape);
+		// this.xPos = ((Line) this.shape).getStartX();
+		// this.yPos = ((Line) this.shape).getStartY();
+	}
 
 	public double getX() {
-		double tmp=this.shape.getTranslateX();
-		this.xPos=tmp;
-		return tmp;
+		if (identifier != EMRShapeFactory.LINE_ID) {
+			double tmp = this.shape.getTranslateX();
+			return tmp;
+		} else {
+			return ((Line) this.shape).getStartX();
+		}
 	}
 
 	public double getY() {
-		double tmp=this.shape.getTranslateY();
-		this.yPos=tmp;
-		return tmp;
+		if (identifier != EMRShapeFactory.LINE_ID) {
+			double tmp = this.shape.getTranslateY();
+			// this.yPos = tmp;
+			return tmp;
+		} else {
+			return ((Line) this.shape).getStartY();
+		}
 	}
 
 	public void setX(double x) {
-		this.shape.setTranslateX(x);
-		this.xPos=x;
+		if (identifier != EMRShapeFactory.LINE_ID) {
+			this.shape.setTranslateX(x);
+			// this.xPos = x;
+		} else {
+			((Line) this.shape).setStartX(x);
+			// this.xPos = x;
+		}
 	}
-	
+
 	public void setY(double y) {
-		shape.setTranslateY(y);
-		this.yPos=y;
+		if (identifier != EMRShapeFactory.LINE_ID) {
+			shape.setTranslateY(y);
+			// this.yPos = y;
+		} else {
+			((Line) this.shape).setStartY(y);
+			// this.yPos = y;
+		}
 	}
 
 	public DoubleProperty getXProperty() {
@@ -93,7 +103,9 @@ public class EMRShape {
 		return shape.translateYProperty();
 	}
 
-	public String getIdentifier() {return this.identifier;}
+	public String getIdentifier() {
+		return this.identifier;
+	}
 
 	private void setDefaultIdentifier() {
 		if (shape instanceof Rectangle) {
@@ -109,11 +121,14 @@ public class EMRShape {
 		}
 	}
 
-
 	@Override
 	public String toString() {
-		// Ignore "Line"s here!
-		return identifier + "," + String.valueOf(this.getX()) + "," + String.valueOf(this.getY());
+		if (identifier == EMRShapeFactory.LINE_ID)
+			return identifier + "," + String.valueOf(this.getX()) + "," + String.valueOf(this.getY()) + ","
+					+ String.valueOf(((Line) this.shape).getEndX()) + ","
+					+ String.valueOf(((Line) this.shape).getEndY());
+		else
+			return identifier + "," + String.valueOf(this.getX()) + "," + String.valueOf(this.getY());
 	}
 
 }

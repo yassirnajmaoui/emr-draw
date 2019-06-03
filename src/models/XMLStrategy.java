@@ -21,6 +21,7 @@ public class XMLStrategy implements FileStrategy {
 		ShapeIterator it = (ShapeIterator) shapeArray.getIterator();
 		while (it.hasNext()) {
 			EMRShape currentShape = it.next();
+			
 			dataXml += "<" + currentShape.getIdentifier() + " x=" + String.valueOf(currentShape.getX()) + " y="
 					+ String.valueOf(currentShape.getY()) + " />\n";
 		}
