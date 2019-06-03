@@ -3,7 +3,11 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.Shadow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
@@ -56,7 +60,7 @@ public class AppController {
 	@FXML
 	public Pane emrPane;
 	@FXML
-	public VBox vboxPalette;
+	public GridPane gridPalette;
 
 	public AppController() {
 		emrShapes = new ShapeContainer();
@@ -94,19 +98,19 @@ public class AppController {
 	public void connexionModeClicked(ActionEvent e) {
 		System.out.println("Mode Connexion clicked");
 		statusBar.setText("Mode Connexion clicked");
-		connexionBtn.setStyle("-fx-background-color:white");
-		dessinBtn.setStyle("-fx-background-color:gray");
-		vboxPalette.setDisable(true);
-		mode = new EMRModeConnexion();
+		connexionBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px" );
+		dessinBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
+		gridPalette.setDisable(true);
+		mode = new EMRModeConnexion(); 
 	}
 
 	@FXML
 	public void dessinModeClicked(ActionEvent e) {
 		System.out.println("Mode Dessin clicked");
 		statusBar.setText("Mode Dessin clicked");
-		dessinBtn.setStyle("-fx-background-color:white");
-		connexionBtn.setStyle("-fx-background-color:gray");
-		vboxPalette.setDisable(false);
+		connexionBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
+		dessinBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px");
+		gridPalette.setDisable(false);
 		mode = new EMRModeDessin();
 	}
 

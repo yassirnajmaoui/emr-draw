@@ -47,8 +47,8 @@
             </MenuBar>
             <ToolBar prefHeight="40.0" prefWidth="200.0">
               <items>
-                <Button fx:id="dessinBtn" mnemonicParsing="false" onAction="#dessinModeClicked" style="-fx-background-color: white;" text="Mode Dessin" />
-                  <Button fx:id="connexionBtn" mnemonicParsing="false" onAction="#connexionModeClicked" style="-fx-background-color: gray;" text="Mode Connexion" />
+                <Button fx:id="dessinBtn" mnemonicParsing="false" onAction="#dessinModeClicked" text="Mode Dessin" />
+                  <Button fx:id="connexionBtn" mnemonicParsing="false" onAction="#connexionModeClicked" text="Mode Connexion" />
               </items>
             </ToolBar>
          </children>
@@ -72,22 +72,27 @@
       <Pane fx:id="emrPane" prefHeight="238.0" prefWidth="259.0" BorderPane.alignment="CENTER" />
    </center>
    <left>
-      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+      <GridPane fx:id="gridPalette" alignment="CENTER" prefHeight="313.0" prefWidth="135.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="92.0" minHeight="1.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseRelease" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Circle fx:id="emrCircle" fill="GOLD" onMouseReleased="#circleMouseRelease" radius="20.0" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Rectangle fx:id="emrSquare" arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="40.0" onMouseReleased="#rectMouseRelease" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" width="40.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Polygon fx:id="emrHexagon" fill="EE82EE" onMouseReleased="#hexagonMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseRelease" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+            <Circle fx:id="emrCircle" fill="GOLD" onMouseReleased="#circleMouseRelease" radius="20.0" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Rectangle fx:id="emrSquare" arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="40.0" onMouseReleased="#rectMouseRelease" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" width="40.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+            <Polygon fx:id="emrHexagon" fill="EE82EE" onMouseReleased="#hexagonMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
 			<points>
                 <Double fx:value="12.0" />
                 <Double fx:value="0.0" />
@@ -103,13 +108,13 @@
                 <Double fx:value="20.0" />
             </points>
         </Polygon>
-            <Group GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Group GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
                   <Line endY="40.0" startX="18.0" />
                </children>
             </Group>
-            <Group GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Group GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                <children>      
               <Polygon fx:id="emrParallelogrammeDiago" fill="#87CEEB" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;">
       			<points>
@@ -127,7 +132,7 @@
                </children>
             </Group>
         
-              <Polygon fx:id="emrParallelogramme1" fill="#87CEEB" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+              <Polygon fx:id="emrParallelogramme1" fill="#87CEEB" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
 			<points>
                 <Double fx:value="0.0" />
                 <Double fx:value="0.0" />
@@ -139,7 +144,7 @@
                 <Double fx:value="38.0" />
             </points>
         </Polygon>
-        <Polygon fx:id="emrParallelogramme2" fill="#0000FF" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+        <Polygon fx:id="emrParallelogramme2" fill="#0000FF" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
 			<points>
                 <Double fx:value="0.0" />
                 <Double fx:value="0.0" />
