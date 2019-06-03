@@ -86,10 +86,9 @@
             <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseRelease" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+            <Ellipse fx:id="emrEllipse" fill="PALEGREEN" onMouseReleased="#ellipseMouseRelease" radiusX="22.5" radiusY="12.0" stroke="GREEN" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
             <Circle fx:id="emrCircle" fill="GOLD" onMouseReleased="#circleMouseRelease" radius="20.0" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
             <Rectangle fx:id="emrSquare" arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="40.0" onMouseReleased="#rectMouseRelease" stroke="RED" strokeType="INSIDE" style="-fx-cursor: hand;" width="40.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
             <Polygon fx:id="emrHexagon" fill="EE82EE" onMouseReleased="#hexagonMouseRelease" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
@@ -112,23 +111,6 @@
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="18.0" />
                   <Line endY="40.0" startX="18.0" />
-               </children>
-            </Group>
-            <Group GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-               <children>      
-              <Polygon fx:id="emrParallelogrammeDiago" fill="#87CEEB" stroke="#0000FF" strokeType="OUTSIDE" style="-fx-cursor: hand;">
-      			<points>
-                      <Double fx:value="0.0" />
-                      <Double fx:value="0.0" />
-                      <Double fx:value="20.0" />
-                      <Double fx:value="0.0" />
-                      <Double fx:value="30.0" />
-                      <Double fx:value="38.0" />
-                      <Double fx:value="10.0" />
-                      <Double fx:value="38.0" />   
-                  </points>
-              </Polygon>
-                  <Line endX="30.0" endY="38.0" stroke="#0000FF" />
                </children>
             </Group>
         
@@ -156,6 +138,16 @@
                 <Double fx:value="38.0" />
             </points>
         </Polygon>
+            <Path fill="#87CEEB" stroke="BLUE" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                <elements>
+                    <MoveTo />
+                    <LineTo x="20.0" />
+                  <LineTo x="30.0" y="38.0" />
+                  <LineTo x="10.0" y="38.0" />
+                  <LineTo />
+                  <LineTo x="30.0" y="38.0" />
+                </elements>
+            </Path>
          </children>
       </GridPane>
    </left>
