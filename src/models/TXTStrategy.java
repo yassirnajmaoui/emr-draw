@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import controllers.AppController;
+import javafx.scene.shape.Line;
 import models.EMRShapeFactory.eShape;
 import models.iterator.ShapeContainer;
 
@@ -34,9 +35,15 @@ public class TXTStrategy implements FileStrategy {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineDivided = line.split(",");
-				if (lineDivided[0] != EMRShapeFactory.LINE_ID) {
+				if (!lineDivided[0].equals(EMRShapeFactory.LINE_ID)) {
 					shapeArray.addShape(new EMRShape(lineDivided[0], Double.parseDouble(lineDivided[1]),
 							Double.parseDouble(lineDivided[2]), a));
+				} else {
+					shapeArray
+							.addShape(new EMRShape(
+									new Line(Double.parseDouble(lineDivided[1]), Double.parseDouble(lineDivided[2]),
+											Double.parseDouble(lineDivided[3]), Double.parseDouble(lineDivided[4])),
+									a));
 				}
 				line = reader.readLine();
 			}
