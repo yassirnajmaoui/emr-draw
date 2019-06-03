@@ -72,7 +72,7 @@
 		<Pane fx:id="emrPane" prefHeight="238.0" prefWidth="259.0" BorderPane.alignment="CENTER" />
 	</center>
 	<left>
-		<GridPane fx:id="gridPalette" alignment="CENTER" prefHeight="313.0" prefWidth="135.0" BorderPane.alignment="CENTER">
+		<GridPane fx:id="gridPalette" alignment="CENTER" gridLinesVisible="true" prefHeight="313.0" prefWidth="135.0" BorderPane.alignment="CENTER">
 			<columnConstraints>
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -152,6 +152,38 @@
                   <LineTo />
                   <MoveTo x="18.0" />
                   <LineTo y="40.0" />
+               </elements>
+            </Path>
+            <Path fx:id="emrFlecheNoire" fill="BLACK" onMouseReleased="#flecheNoireMouseRelease" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <elements>
+                    <MoveTo />
+                  <LineTo y="1.0" />
+                    <LineTo x="33.0" y="1.0" />
+                  <LineTo x="33.0" y="3.5" />
+                  <LineTo x="38.0" />
+                  <LineTo x="33.0" y="-3.5" />
+                  <LineTo x="33.0" y="-1.0" />
+                  <LineTo y="-1.0" />
+                  <ClosePath />
+                </elements>
+            </Path>
+            <Path fx:id="emrTripleCarree" fill="#FFD700" stroke="#FF0000" strokeType="INSIDE" onMouseReleased="#tripleCarreeMouseRelease" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <elements>
+                  <MoveTo />
+                  <HLineTo x="32.0" />
+                  <VLineTo y="32.0" />
+                  <HLineTo />
+                  <VLineTo />
+                  <MoveTo x="8.0" y="8.0" />
+                  <HLineTo x="40.0" />
+                  <VLineTo y="40.0" />
+                  <HLineTo x="8.0" />
+                  <VLineTo y="8.0" />
+                  <MoveTo x="16.0" y="16.0" />
+                  <HLineTo x="48.0" />
+                  <VLineTo y="48.0" />
+                  <HLineTo x="16.0" />
+                  <VLineTo y="16.0" />
                </elements>
             </Path>
 			</children>

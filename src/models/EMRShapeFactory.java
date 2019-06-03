@@ -119,6 +119,28 @@ public class EMRShapeFactory {
 		return path;
 	}
 	
+	public static Path createFlecheNoire(double x, double y, AppController a) {
+		Path path = new Path(a.emrFlecheNoire.getElements());
+		path.setFillRule(a.emrFlecheNoire.getFillRule());
+		path.setTranslateX(x);
+		path.setTranslateY(y);
+		path.setStroke(a.emrFlecheNoire.getStroke());
+		path.setFill(a.emrFlecheNoire.getFill());
+		manageEvents(path,a);
+		return path;
+	}
+	
+	public static Path createTripleCarree(double x, double y, AppController a) {
+		Path path = new Path(a.emrTripleCarree.getElements());
+		path.setFillRule(a.emrTripleCarree.getFillRule());
+		path.setTranslateX(x);
+		path.setTranslateY(y);
+		path.setStroke(a.emrTripleCarree.getStroke());
+		path.setFill(a.emrTripleCarree.getFill());
+		manageEvents(path,a);
+		return path;
+	}
+	
 	private static void manageEvents(Shape n, AppController a)
 	{
 		n.setCursor(Cursor.HAND);

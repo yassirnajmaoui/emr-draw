@@ -1,2 +1,2 @@
-ovalevert,302.0,296.0
-ovalevert,232.0,221.0
+flecheNoire,199.0,105.0
+flecheNoire,238.0,72.0

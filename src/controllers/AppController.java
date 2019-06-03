@@ -32,7 +32,9 @@ public class AppController {
 			mode = new EMRModeDessin();
 		return mode;
 	}
-
+	
+	@FXML
+	public Path emrFlecheNoire; // Shape #1
 	@FXML
 	public Ellipse emrEllipse; // Shape #6
 	@FXML
@@ -43,6 +45,8 @@ public class AppController {
 	public Polygon emrTrapezePlein; // Shape #10
 	@FXML
 	public Polygon emrHexagon; // Shape #11
+	@FXML
+	public Path emrTripleCarree; // Shape #12
 	@FXML
 	public Circle emrCircle; // Shape #13
 	@FXML
@@ -113,8 +117,18 @@ public class AppController {
 		addNode(new EMRShape(EMRShapeFactory.RECTANGLEDIAGO_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
 				this));
 	}
+	@FXML
+	public void flecheNoireMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.FLECHENOIRE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
 	
-	
+	@FXML
+	public void tripleCarreeMouseRelease(MouseEvent e) {
+		addNode(new EMRShape(EMRShapeFactory.TRIPLECARREE_ID, e.getSceneX() - emrPane.getLayoutX(), e.getSceneY() - emrPane.getLayoutY(),
+				this));
+	}
+		
 	@FXML
 	public void connexionModeClicked(ActionEvent e) {
 		System.out.println("Mode Connexion clicked: Des connexions peuvent désormais être établies");

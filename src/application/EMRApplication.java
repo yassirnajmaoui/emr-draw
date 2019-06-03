@@ -19,7 +19,7 @@ public class EMRApplication extends Application {
 		try {
 			Pane root = FXMLLoader.load(getClass().getResource("/views/EMR_ui.fxml"));
 			Scene scene = new Scene(root,600,750);
-			
+					
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("EMR Application");
 			primaryStage.show();

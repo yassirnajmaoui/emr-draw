@@ -21,6 +21,9 @@ public class EMRShape {
 
 	public EMRShape(String id, double x, double y, AppController a) {
 		switch (id) {
+		case EMRShapeFactory.FLECHENOIRE_ID:
+			this.shape = EMRShapeFactory.createFlecheNoire(x, y, a);
+			break;
 		case EMRShapeFactory.ELLIPSE_ID:
 			this.shape = EMRShapeFactory.createEllipse(x, y, a);
 			break;
@@ -44,6 +47,9 @@ public class EMRShape {
 			break;
 		case EMRShapeFactory.RECTANGLEDIAGO_ID:
 			this.shape = EMRShapeFactory.createRectangleDiago(x, y, a);
+			break;
+		case EMRShapeFactory.TRIPLECARREE_ID:
+			this.shape = EMRShapeFactory.createTripleCarree(x, y, a);
 			break;
 		default:
 			return;
