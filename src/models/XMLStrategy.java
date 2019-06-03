@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 
 import controllers.AppController;
+import javafx.scene.shape.Line;
 import models.iterator.ShapeContainer;
 import models.iterator.ShapeIterator;
 
@@ -21,9 +22,15 @@ public class XMLStrategy implements FileStrategy {
 		ShapeIterator it = (ShapeIterator) shapeArray.getIterator();
 		while (it.hasNext()) {
 			EMRShape currentShape = it.next();
-			
-			dataXml += "<" + currentShape.getIdentifier() + " x=" + String.valueOf(currentShape.getX()) + " y="
-					+ String.valueOf(currentShape.getY()) + " />\n";
+			if (currentShape.getIdentifier().equals(EMRShapeFactory.LINE_ID))
+				dataXml += "<" + EMRShapeFactory.LINE_ID + " sx=" + String.valueOf(currentShape.getX()) + " sy="
+						+ String.valueOf(currentShape.getY()) + " ex="
+						+ String.valueOf(((Line) currentShape.getShape()).getEndX()) + " ey="
+						+ String.valueOf(((Line) currentShape.getShape()).getEndY()) + "/>";
+			else
+				dataXml += "<" + currentShape.getIdentifier() + " x=" + String.valueOf(currentShape.getX()) + " y="
+						+ String.valueOf(currentShape.getY()) + "/>";
+			dataXml+="\n";
 		}
 		try {
 			FileWriter fw = new FileWriter(filename);
