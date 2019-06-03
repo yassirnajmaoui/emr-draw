@@ -20,10 +20,10 @@ public class EMRModeDessin implements EMRMode {
 		double offsetX = t.getSceneX() - EMRShapeFactory.getOrgSceneX();
 		double offsetY = t.getSceneY() - EMRShapeFactory.getOrgSceneY();
 
-		EMRShape c = new EMRShape((Shape) (t.getSource()));
+		Shape c = (Shape) (t.getSource());
 
-		c.setX(c.getX()+offsetX);
-		c.setY(c.getY()+offsetY);
+		c.setTranslateX(c.getTranslateX()+offsetX);
+		c.setTranslateY(c.getTranslateY()+offsetY);
 		EMRShapeFactory.setOrgSceneX(t.getSceneX());
 		EMRShapeFactory.setOrgSceneY(t.getSceneY());
 	}

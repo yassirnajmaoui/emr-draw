@@ -1,8 +1,5 @@
 package models;
 
-import java.io.FileWriter;
-
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import controllers.AppController;
 import javafx.beans.property.DoubleProperty;
 import javafx.scene.shape.Circle;
@@ -14,7 +11,7 @@ import javafx.scene.shape.Shape;
 import models.EMRShapeFactory.eShape;
 
 
-
+//TODO: ADD CLASS FOR CONNEXIONS
 public class EMRShape {
 
 	private String identifier;
@@ -23,7 +20,7 @@ public class EMRShape {
 
 	private double yPos;
 
-	@XStreamOmitField
+	//@XStreamOmitField
 	private  Shape shape;
 
 	public Shape getShape() {
@@ -34,22 +31,37 @@ public class EMRShape {
 		this.shape = shape;
 	}
 
-	public EMRShape(eShape s, double x, double y, AppController a) {
-		if(s==eShape.ELLIPSE)
+	public EMRShape(String id, double x, double y, AppController a) {
+		switch (id) {
+		case EMRShapeFactory.ELLIPSE_ID:
 			this.shape=EMRShapeFactory.createEllipse(x, y, a);
-		else if(s==eShape.CIRCLE)
+			break;
+		case EMRShapeFactory.CIRCLE_ID:
 			this.shape=EMRShapeFactory.createCircle(x, y, a);
-		else if(s==eShape.SQUARE)
+			break;
+		case EMRShapeFactory.SQUARE_ID:
 			this.shape=EMRShapeFactory.createRect(x, y, a);
-		else if(s==eShape.HEXAGON)
+			break;
+		case EMRShapeFactory.HEXAGON_ID:
 			this.shape=EMRShapeFactory.createHexagon(x, y, a);
+			break;
+		case EMRShapeFactory.LINE_ID:
+			// We ignore the creation of line,
+			//another method for creating them should be made
+			return;
+		default:
+			break;
+		}
 		setX(x);
 		setY(y);
 		setDefaultIdentifier();
+		a.emrPane.getChildren().add(this.shape);
 	}
-	public EMRShape(Shape s)
+	public EMRShape(Shape s, AppController a)
 	{
 		this.shape=s;
+		setDefaultIdentifier();
+		a.emrPane.getChildren().add(this.shape);
 	}
 
 
@@ -85,30 +97,25 @@ public class EMRShape {
 
 	public String getIdentifier() {return this.identifier;}
 
-	public void setDefaultIdentifier() {
+	private void setDefaultIdentifier() {
 		if (shape instanceof Rectangle) {
-			this.identifier = "Rectangle";
+			this.identifier = EMRShapeFactory.SQUARE_ID;
 		} else if (shape instanceof Ellipse) {
-			this.identifier = "Ellipse";
+			this.identifier = EMRShapeFactory.ELLIPSE_ID;
 		} else if (shape instanceof Circle) {
-			this.identifier = "Circle";
+			this.identifier = EMRShapeFactory.CIRCLE_ID;
 		} else if (shape instanceof Line) {
-			this.identifier = "Line";
+			this.identifier = EMRShapeFactory.LINE_ID;
 		} else if (shape instanceof Polygon && ((Polygon) shape).getPoints().size() == 6) {
-			this.identifier = "Hexagon";
+			this.identifier = EMRShapeFactory.HEXAGON_ID;
 		}
 	}
 
-
-	public void setIdentifier(String identifier) { this.identifier = identifier;}
-	
 
 	@Override
 	public String toString() {
 		// Ignore "Line"s here!
 		return identifier + "," + String.valueOf(this.getX()) + "," + String.valueOf(this.getY());
 	}
-
-
 
 }

@@ -18,7 +18,12 @@ public class EMRShapeFactory {
 
 	private static double orgSceneX, orgSceneY;
 	private static boolean dragging;
-	public static enum eShape{ELLIPSE,CIRCLE,SQUARE,HEXAGON}
+	public static final String ELLIPSE_ID = "Ellipse";
+	public static final String CIRCLE_ID = "Circle";
+	public static final String SQUARE_ID = "Square";
+	public static final String HEXAGON_ID = "Hexagon";
+	public static final String LINE_ID = "Line";
+	public static enum eShape{ELLIPSE,CIRCLE,SQUARE,HEXAGON,LINE}
 	
 	public static Circle createCircle(double x, double y, AppController a) {
 		Circle circle = new Circle(a.emrCircle.getRadius());
