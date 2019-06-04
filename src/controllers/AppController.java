@@ -181,7 +181,7 @@ public class AppController {
 		this.emrConnexions.clearConnexions();
 		emrPane.getChildren().clear();
 		myStrategy = new XMLStrategy();
-		myStrategy.openFile("myXMLFile.xml", this.emrShapes, this.emrConnexions, this);
+		myStrategy.openFile("src/views/myXMLFile.xml", this.emrShapes, this.emrConnexions, this);
 	}
 
 	@FXML
@@ -193,7 +193,7 @@ public class AppController {
 		this.emrConnexions.clearConnexions();
 		emrPane.getChildren().clear();
 		myStrategy = new TXTStrategy();
-		myStrategy.openFile("myTXTFile.txt", this.emrShapes, this.emrConnexions, this);
+		myStrategy.openFile("src/views/myTXTFile.txt", this.emrShapes, this.emrConnexions, this);
 	}
 
 	@FXML
@@ -201,7 +201,7 @@ public class AppController {
 		System.out.println("Menu File-save clicked");
 		statusBar.setText("Menu File-save clicked");
 		myStrategy = new XMLStrategy();
-		myStrategy.saveFile("myXMLFile.xml", emrShapes, emrConnexions);
+		myStrategy.saveFile("src/views/myXMLFile.xml", emrShapes, emrConnexions);
 	}
 
 	@FXML
@@ -209,7 +209,7 @@ public class AppController {
 		System.out.println("Menu File-save clicked");
 		statusBar.setText("Menu File-save clicked");
 		myStrategy = new TXTStrategy();
-		myStrategy.saveFile("myTXTFile.txt", emrShapes, emrConnexions);
+		myStrategy.saveFile("src/views/myTXTFile.txt", emrShapes, emrConnexions);
 	}
 
 	@FXML
