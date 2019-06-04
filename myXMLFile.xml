@@ -1,3 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<hexagone x=62.400000000000006 y=186.4/>
-<trapezeplein x=69.60000000000002 y=109.6/>
+<?xml version="1.0"?><contenu>
+<shape>
+	<type>trapezeplein</type>
+	<x>117.60000000000002</x>
+	<y>126.4</y>
+	<shapehash>2017646754</shapehash>
+</shape>
+<shape>
+	<type>hexagone</type>
+	<x>209.60000000000002</x>
+	<y>332.0</y>
+	<shapehash>749382030</shapehash>
+</shape>
+<connexion>
+	<startshape>2017646754</startshape>
+	<endshape>749382030</endshape>
+</connexion>
+</contenu>

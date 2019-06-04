@@ -1,4 +1,4 @@
-package models;
+package models.strategy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import controllers.AppController;
+import models.EMRConnexion;
+import models.EMRShape;
+import models.EMRShapeFactory;
 import models.iterator.ConnexionContainer;
 import models.iterator.ShapeContainer;
 
@@ -77,28 +80,4 @@ public class TXTStrategy implements FileStrategy {
 		}
 	}
 
-	public static int findIndex(int arr[], int t) {
-
-		// if array is Null
-		if (arr == null) {
-			return -1;
-		}
-
-		// find length of array
-		int len = arr.length;
-		int i = 0;
-
-		// traverse in the array
-		while (i < len) {
-
-			// if the i-th element is t
-			// then return the index
-			if (arr[i] == t) {
-				return i;
-			} else {
-				i = i + 1;
-			}
-		}
-		return -1;
-	}
 }

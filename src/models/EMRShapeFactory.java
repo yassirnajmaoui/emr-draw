@@ -19,6 +19,17 @@ public class EMRShapeFactory {
 
 	private static double orgSceneX, orgSceneY;
 	private static boolean dragging;
+
+	public static final String LINE_ID = "connexion";
+	public static final String SHAPES_XML_ID = "shapes";
+	public static final String LINES_XML_ID = "connexions";
+	public static final String SHAPE_XML_ID = "shape";
+	public static final String TYPE_XML_ID = "type";
+	public static final String X_XML_ID = "x";
+	public static final String Y_XML_ID = "y";
+	public static final String SHAPEHASH_XML_ID = "shapehash";
+	public static final String STARTSHAPE_XML_ID = "startshape";
+	public static final String ENDSHAPE_XML_ID = "endshape";
 	public static final String FLECHENOIRE_ID = "flecheNoire"; // Shape #1
 	public static final String FLECHEPOINTILLEE_ID = "flechePointillee"; // Shape #2
 	public static final String FLECHEROUGE_ID = "flecheRouge"; // Shape #3
@@ -35,7 +46,6 @@ public class EMRShapeFactory {
 	public static final String SQUARE_ID = "carre"; // Shape #14
 	public static final String RECTANGLEDIAGO_ID = "rectanglediago"; // Shape #15
 	public static final String DOUBLECERCLE_ID = "doublecercle"; // Shape #16
-	public static final String LINE_ID = "connexion";
 	
 	public static Circle createCircle(double x, double y, AppController a) {
 		Circle circle = new Circle(a.emrCircle.getRadius());

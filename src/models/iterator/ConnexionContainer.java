@@ -28,7 +28,7 @@ public class ConnexionContainer implements Container {
 		return connexionArray.size();
 	}
 
-	public void clearShapes() {
+	public void clearConnexions() {
 		this.connexionArray.clear();
 	}
 

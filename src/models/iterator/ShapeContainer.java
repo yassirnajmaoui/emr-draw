@@ -1,6 +1,6 @@
 package models.iterator;
 
-import java.io.FileWriter;
+
 import java.util.ArrayList;
 import models.EMRShape;
 

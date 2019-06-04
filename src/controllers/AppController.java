@@ -17,11 +17,11 @@ import models.EMRModeConnexion;
 import models.EMRModeDessin;
 import models.EMRShape;
 import models.EMRShapeFactory;
-import models.FileStrategy;
-import models.TXTStrategy;
-import models.XMLStrategy;
+import models.strategy.TXTStrategy;
+import models.strategy.XMLStrategy;
 import models.iterator.ConnexionContainer;
 import models.iterator.ShapeContainer;
+import models.strategy.FileStrategy;
 
 public class AppController {
 
@@ -154,8 +154,8 @@ public class AppController {
 		
 	@FXML
 	public void connexionModeClicked(ActionEvent e) {
-		System.out.println("Mode Connexion clicked: Des connexions peuvent d�sormais �tre �tablies");
-		statusBar.setText("Mode Connexion clicked: Des connexions peuvent d�sormais �tre �tablies");
+		System.out.println("Mode Connexion clicked: Des connexions peuvent desormais etre etablies");
+		statusBar.setText("Mode Connexion clicked: Des connexions peuvent desormais etre etablies");
 		connexionBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px" );
 		dessinBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
 		gridPalette.setDisable(true);
@@ -164,8 +164,8 @@ public class AppController {
 
 	@FXML
 	public void dessinModeClicked(ActionEvent e) {
-		System.out.println("Mode Dessin clicked: Des formes peuvent d�sormais �tre drag & dropped dans le canevas");
-		statusBar.setText("Mode Dessin clicked: Des formes peuvent d�sormais �tre drag & dropped dans le canevas");
+		System.out.println("Mode Dessin clicked: Des formes peuvent desormais etre drag & dropped dans le canevas");
+		statusBar.setText("Mode Dessin clicked: Des formes peuvent desormais etre drag & dropped dans le canevas");
 		connexionBtn.setStyle("-fx-border-color: #000000; -fx-border-width: 0px");
 		dessinBtn.setStyle("-fx-border-color: #0000ff; -fx-border-width: 1px");
 		gridPalette.setDisable(false);
@@ -176,7 +176,12 @@ public class AppController {
 	public void openMenuXMLClicked(ActionEvent a) {
 		System.out.println("Menu File-OpenXML clicked");
 		statusBar.setText("Menu File-OpenXML clicked");
-		// TODO:OPEN XML
+
+		this.emrShapes.clearShapes();
+		this.emrConnexions.clearConnexions();
+		emrPane.getChildren().clear();
+		myStrategy = new XMLStrategy();
+		myStrategy.openFile("myXMLFile.xml", this.emrShapes, this.emrConnexions, this);
 	}
 
 	@FXML
@@ -185,6 +190,7 @@ public class AppController {
 		statusBar.setText("Menu File-OpenTXT clicked");
 
 		this.emrShapes.clearShapes();
+		this.emrConnexions.clearConnexions();
 		emrPane.getChildren().clear();
 		myStrategy = new TXTStrategy();
 		myStrategy.openFile("myTXTFile.txt", this.emrShapes, this.emrConnexions, this);
@@ -231,28 +237,3 @@ public class AppController {
 		System.out.println(emrShapes.toString()); // Temporaire
 	}
 }
-
-/*
- * @FXML public void btnCircleClicked(ActionEvent a){ //to do: add
- * numberFormatException //System.out.println("Button Circle clicked"); try {
- * int width = Integer.parseInt(widthTxtField.getText()); int height = 0;
- * ShapeFactory shapeFactory = new ShapeFactory(); Shape circle =
- * shapeFactory.makeShape(eShape.CIRCLE, width, height);
- * areaTxtField.setText(String.valueOf(circle.getArea())); } catch
- * (NumberFormatException e) { System.out.println(e.getMessage());
- * areaTxtField.setText("wroooong"); } }
- */
-
-/*
- * code temporaire � deleter quand on est s�r que c'est ok d'instancier les
- * formes de la palette dans le fxml public class Hexagon {
- * 
- * public Hexagon(){;}
- * 
- * public Polygon createHexagon() { Polygon hexagon = new Polygon();
- * hexagon.getPoints().addAll(new Double[]{
- * 
- * 12.0, 0.0, 32.0, 0.0, 44.0, 20.0, 32.0, 40.0, 12.0, 40.0, 0.0, 20.0
- * 
- * }); return hexagon; } }
- */

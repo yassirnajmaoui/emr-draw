@@ -1,7 +1,6 @@
 package models.iterator;
 
 import models.EMRConnexion;
-import models.EMRShape;
 
 public class ConnexionIterator implements Iterator{
 

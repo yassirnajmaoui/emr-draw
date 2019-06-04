@@ -1,4 +1,4 @@
-package models;
+package models.strategy;
 
 import controllers.AppController;
 import models.iterator.ConnexionContainer;

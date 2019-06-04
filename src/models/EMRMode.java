@@ -1,7 +1,6 @@
 package models;
 
 import controllers.AppController;
-import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 
 //--------------------------------------------------------
