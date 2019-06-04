@@ -1,4 +1,4 @@
-package models;
+package models.file;
 
 import controllers.AppController;
 

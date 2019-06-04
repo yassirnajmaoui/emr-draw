@@ -1,5 +1,8 @@
 package controllers;
 
+import controllers.state.EMRMode;
+import controllers.state.EMRModeConnexion;
+import controllers.state.EMRModeDessin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -12,16 +15,13 @@ import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import models.EMRConnexion;
-import models.EMRMode;
-import models.EMRModeConnexion;
-import models.EMRModeDessin;
 import models.EMRShape;
 import models.EMRShapeFactory;
-import models.strategy.TXTStrategy;
-import models.strategy.XMLStrategy;
+import models.file.strategy.FileStrategy;
+import models.file.strategy.TXTStrategy;
+import models.file.strategy.XMLStrategy;
 import models.iterator.ConnexionContainer;
 import models.iterator.ShapeContainer;
-import models.strategy.FileStrategy;
 
 public class AppController {
 

@@ -1,9 +1,10 @@
-package models;
+package models.file;
 
 import java.util.ArrayList;
 
 import controllers.AppController;
 import javafx.scene.shape.Shape;
+import models.EMRConnexion;
 import models.iterator.ShapeContainer;
 import models.iterator.ShapeIterator;
 

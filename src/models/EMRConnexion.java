@@ -3,6 +3,8 @@ package models;
 import controllers.AppController;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
+import javafx.scene.shape.StrokeLineCap;
+import javafx.scene.shape.StrokeType;
 
 public class EMRConnexion {
 
@@ -38,6 +40,7 @@ public class EMRConnexion {
 		line.startYProperty().bind(c1.translateYProperty());
 		line.endXProperty().bind(c2.translateXProperty());
 		line.endYProperty().bind(c2.translateYProperty());
+		line.getStrokeDashArray().addAll(21d,10d);
 		return line;
 	}
 

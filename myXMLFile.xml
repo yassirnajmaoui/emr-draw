@@ -1,18 +1,330 @@
 <?xml version="1.0"?><contenu>
 <shape>
-	<type>trapezeplein</type>
-	<x>117.60000000000002</x>
-	<y>126.4</y>
-	<shapehash>2017646754</shapehash>
+	<type>ovalevert</type>
+	<x>113.6</x>
+	<y>260.79999999999995</y>
+	<shapehash>1353368954</shapehash>
+</shape>
+<shape>
+	<type>triplecarree</type>
+	<x>178.40000000000003</x>
+	<y>260.8</y>
+	<shapehash>540714636</shapehash>
+</shape>
+<shape>
+	<type>carre</type>
+	<x>271.20000000000005</x>
+	<y>120.80000000000001</y>
+	<shapehash>936104618</shapehash>
+</shape>
+<shape>
+	<type>carre</type>
+	<x>270.40000000000003</x>
+	<y>356.8</y>
+	<shapehash>405238921</shapehash>
+</shape>
+<shape>
+	<type>rectanglediago</type>
+	<x>340.00000000000006</x>
+	<y>356.79999999999995</y>
+	<shapehash>505471970</shapehash>
+</shape>
+<shape>
+	<type>rectanglediago</type>
+	<x>341.59999999999997</x>
+	<y>120.79999999999998</y>
+	<shapehash>1801140332</shapehash>
+</shape>
+<shape>
+	<type>cercle</type>
+	<x>412.00000000000006</x>
+	<y>377.6000000000001</y>
+	<shapehash>40696111</shapehash>
+</shape>
+<shape>
+	<type>cercle</type>
+	<x>410.3999999999999</x>
+	<y>139.2</y>
+	<shapehash>567039703</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>305.6</x>
+	<y>128.00000000000003</y>
+	<shapehash>946507519</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>307.20000000000005</x>
+	<y>150.4</y>
+	<shapehash>180373958</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>307.2</x>
+	<y>367.2</y>
+	<shapehash>1870687280</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>306.40000000000003</x>
+	<y>387.20000000000005</y>
+	<shapehash>741991929</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>356.8</x>
+	<y>128.79999999999998</y>
+	<shapehash>1078496247</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>356.8</x>
+	<y>151.20000000000002</y>
+	<shapehash>1221489729</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>356.8</x>
+	<y>366.4</y>
+	<shapehash>616788100</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>356.79999999999995</x>
+	<y>385.59999999999997</y>
+	<shapehash>1194745800</shapehash>
+</shape>
+<shape>
+	<type>carre</type>
+	<x>451.99999999999994</x>
+	<y>356.79999999999995</y>
+	<shapehash>1126527978</shapehash>
+</shape>
+<shape>
+	<type>carre</type>
+	<x>449.6000000000001</x>
+	<y>120.0</y>
+	<shapehash>2020764595</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>420.8</x>
+	<y>128.8</y>
+	<shapehash>1200255849</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>420.8</x>
+	<y>145.60000000000002</y>
+	<shapehash>850902095</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>423.2</x>
+	<y>367.2</y>
+	<shapehash>1516577744</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>424.00000000000006</x>
+	<y>384.0</y>
+	<shapehash>832697564</shapehash>
+</shape>
+<shape>
+	<type>triplecarree</type>
+	<x>536.0</x>
+	<y>245.6</y>
+	<shapehash>623167674</shapehash>
+</shape>
+<shape>
+	<type>trapeze</type>
+	<x>248.00000000000006</x>
+	<y>455.9999999999999</y>
+	<shapehash>721313173</shapehash>
+</shape>
+<shape>
+	<type>trapeze</type>
+	<x>258.40000000000003</x>
+	<y>555.9999999999999</y>
+	<shapehash>1509331129</shapehash>
+</shape>
+<shape>
+	<type>trapezediago</type>
+	<x>315.20000000000005</x>
+	<y>456.79999999999995</y>
+	<shapehash>1733269583</shapehash>
+</shape>
+<shape>
+	<type>trapezediago</type>
+	<x>324.8</x>
+	<y>557.6</y>
+	<shapehash>1680731396</shapehash>
+</shape>
+<shape>
+	<type>trapeze</type>
+	<x>365.6</x>
+	<y>456.79999999999995</y>
+	<shapehash>1013384929</shapehash>
+</shape>
+<shape>
+	<type>trapeze</type>
+	<x>378.4</x>
+	<y>557.5999999999999</y>
+	<shapehash>1366895244</shapehash>
+</shape>
+<shape>
+	<type>trapeze</type>
+	<x>430.40000000000003</x>
+	<y>458.4</y>
+	<shapehash>1257196812</shapehash>
+</shape>
+<shape>
+	<type>trapeze</type>
+	<x>440.8</x>
+	<y>557.5999999999999</y>
+	<shapehash>1101122712</shapehash>
+</shape>
+<shape>
+	<type>doubletrapeze</type>
+	<x>488.0</x>
+	<y>504.79999999999995</y>
+	<shapehash>1173723715</shapehash>
+</shape>
+<shape>
+	<type>trapezediago</type>
+	<x>556.0000000000001</x>
+	<y>503.19999999999993</y>
+	<shapehash>1564538171</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>520.0000000000001</x>
+	<y>513.6</y>
+	<shapehash>1844921522</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>524.8000000000001</x>
+	<y>530.4</y>
+	<shapehash>578654360</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>400.8</x>
+	<y>488.79999999999995</y>
+	<shapehash>1270030614</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>412.8</x>
+	<y>590.4</y>
+	<shapehash>293661814</shapehash>
 </shape>
 <shape>
 	<type>hexagone</type>
-	<x>209.60000000000002</x>
-	<y>332.0</y>
-	<shapehash>749382030</shapehash>
+	<x>92.0</x>
+	<y>334.4</y>
+	<shapehash>1174796320</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>340.8</x>
+	<y>491.19999999999993</y>
+	<shapehash>145901864</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>348.8</x>
+	<y>592.0</y>
+	<shapehash>1524331193</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>292.0</x>
+	<y>573.5999999999999</y>
+	<shapehash>1286522568</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>282.40000000000003</x>
+	<y>476.79999999999995</y>
+	<shapehash>629400453</shapehash>
+</shape>
+<shape>
+	<type>rectanglediago</type>
+	<x>615.2</x>
+	<y>252.8</y>
+	<shapehash>1063392532</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>579.2</x>
+	<y>264.0</y>
+	<shapehash>1051584251</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>580.0</x>
+	<y>283.20000000000005</y>
+	<shapehash>76541792</shapehash>
+</shape>
+<shape>
+	<type>trapezeplein</type>
+	<x>816.8000000000001</x>
+	<y>536.0000000000001</y>
+	<shapehash>1042987967</shapehash>
+</shape>
+<shape>
+	<type>ovalevert</type>
+	<x>684.8</x>
+	<y>271.2</y>
+	<shapehash>298828763</shapehash>
+</shape>
+<shape>
+	<type>flecheNoire</type>
+	<x>632.8</x>
+	<y>272.0</y>
+	<shapehash>1082418471</shapehash>
 </shape>
 <connexion>
-	<startshape>2017646754</startshape>
-	<endshape>749382030</endshape>
+	<startshape>540714636</startshape>
+	<endshape>405238921</endshape>
+</connexion>
+<connexion>
+	<startshape>540714636</startshape>
+	<endshape>936104618</endshape>
+</connexion>
+<connexion>
+	<startshape>2020764595</startshape>
+	<endshape>623167674</endshape>
+</connexion>
+<connexion>
+	<startshape>1126527978</startshape>
+	<endshape>623167674</endshape>
+</connexion>
+<connexion>
+	<startshape>1353368954</startshape>
+	<endshape>540714636</endshape>
+</connexion>
+<connexion>
+	<startshape>1101122712</startshape>
+	<endshape>1173723715</endshape>
+</connexion>
+<connexion>
+	<startshape>1257196812</startshape>
+	<endshape>1173723715</endshape>
+</connexion>
+<connexion>
+	<startshape>1353368954</startshape>
+	<endshape>1174796320</endshape>
+</connexion>
+<connexion>
+	<startshape>1063392532</startshape>
+	<endshape>1564538171</endshape>
+</connexion>
+<connexion>
+	<startshape>1042987967</startshape>
+	<endshape>298828763</endshape>
 </connexion>
 </contenu>

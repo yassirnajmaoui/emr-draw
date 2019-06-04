@@ -1,8 +1,9 @@
-package models;
+package controllers.state;
 
 import controllers.AppController;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Shape;
+import models.EMRShapeFactory;
 
 //--------------------------------------------------
 //This class makes part of the State Design Pattern

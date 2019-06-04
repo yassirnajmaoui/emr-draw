@@ -72,7 +72,7 @@
 		<Pane fx:id="emrPane" prefHeight="238.0" prefWidth="259.0" BorderPane.alignment="CENTER" />
 	</center>
 	<left>
-		<GridPane fx:id="gridPalette" alignment="CENTER" gridLinesVisible="true" prefHeight="313.0" prefWidth="135.0" BorderPane.alignment="CENTER">
+		<GridPane fx:id="gridPalette" alignment="CENTER" gridLinesVisible="true" prefHeight="313.0" prefWidth="135.0" style="-fx-background-color: #dbdbdb;" BorderPane.alignment="CENTER">
 			<columnConstraints>
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -154,7 +154,7 @@
                   <LineTo y="40.0" />
                </elements>
             </Path>
-            <Path fx:id="emrFlecheNoire" style="-fx-cursor:HAND;" fill="BLACK" onMouseReleased="#flecheNoireMouseRelease" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Path fx:id="emrFlecheNoire" fill="BLACK" onMouseReleased="#flecheNoireMouseRelease" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" style="-fx-cursor:HAND;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                 <elements>
                     <MoveTo />
                   <LineTo y="1.0" />
@@ -167,7 +167,7 @@
                   <ClosePath />
                 </elements>
             </Path>
-            <Path fx:id="emrTripleCarree" style="-fx-cursor:HAND;" fill="#FFD700" stroke="#FF0000" strokeType="INSIDE" onMouseReleased="#tripleCarreeMouseRelease" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Path fx:id="emrTripleCarree" fill="#FFD700" onMouseReleased="#tripleCarreeMouseRelease" stroke="#FF0000" strokeType="INSIDE" style="-fx-cursor:HAND;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <elements>
                   <MoveTo />
                   <HLineTo x="32.0" />
@@ -186,7 +186,7 @@
                   <VLineTo y="16.0" />
                </elements>
             </Path>
-            <Path fx:id="emrDoubleTrapeze" fill="DODGERBLUE" stroke="BLACK" onMouseReleased="#doubleTrapezeMouseRelease" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Path fx:id="emrDoubleTrapeze" fill="DODGERBLUE" onMouseReleased="#doubleTrapezeMouseRelease" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                 <elements>
                     <MoveTo />
                   <HLineTo x="24.0" />
@@ -200,7 +200,7 @@
                   <LineTo x="12.0" y="10.0" />
                 </elements>
             </Path>
-            <Path fx:id="emrDoubleCercle" fill="#FFD700" stroke="#FF0000" onMouseReleased="#doubleCercleMouseRelease" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+            <Path fx:id="emrDoubleCercle" fill="#FFD700" onMouseReleased="#doubleCercleMouseRelease" stroke="#FF0000" strokeType="INSIDE" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                 <elements>
                     <MoveTo />
                     <ArcTo radiusX="27.0" radiusY="27.0" x="54.0" />

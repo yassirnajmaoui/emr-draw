@@ -1,4 +1,4 @@
-package models.strategy;
+package models.file.strategy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package models.strategy;
+package models.file.strategy;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,11 +18,11 @@ import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import controllers.AppController;
 import models.EMRConnexion;
-import models.EMRConnexionModel;
 import models.EMRShape;
 import models.EMRShapeFactory;
-import models.EMRShapeModel;
-import models.FileModel;
+import models.file.EMRShapeModel;
+import models.file.EMRConnexionModel;
+import models.file.FileModel;
 import models.iterator.ConnexionContainer;
 import models.iterator.ConnexionIterator;
 import models.iterator.ShapeContainer;

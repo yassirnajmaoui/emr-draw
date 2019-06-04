@@ -1,8 +1,10 @@
-package models;
+package models.file;
 
 import java.util.ArrayList;
 
 import controllers.AppController;
+import models.EMRConnexion;
+import models.EMRShape;
 import models.iterator.ConnexionContainer;
 import models.iterator.ShapeContainer;
 import models.iterator.ShapeIterator;
