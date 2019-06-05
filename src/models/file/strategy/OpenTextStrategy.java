@@ -23,9 +23,9 @@ public class OpenTextStrategy implements OpenStrategy {
 	public void open(ShapeContainer shapeArray, ConnexionContainer connexionArray, AppController a) {
 //--------------------------------------------------------------------------------------------
 		JFileChooser openBox = new JFileChooser();
-		openBox.setCurrentDirectory(new File("/src"));
 		FileNameExtensionFilter ft = new FileNameExtensionFilter( "Text Files", "txt" );
 		openBox.addChoosableFileFilter(ft);
+		openBox.setAcceptAllFileFilterUsed(false);
 		int retrival = openBox.showOpenDialog(null);
 		if (retrival == JFileChooser.APPROVE_OPTION) {
 			BufferedReader reader;

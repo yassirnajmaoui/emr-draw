@@ -15,9 +15,10 @@ public class SaveTextStrategy implements SaveStrategy {
 	@Override
 	public void save(ShapeContainer shapeArray, ConnexionContainer connexionArray) {
 		JFileChooser savebox = new JFileChooser();
-		savebox.setCurrentDirectory(new File("/src"));
+		//savebox.setCurrentDirectory(new File("/src"));
 		FileNameExtensionFilter ft = new FileNameExtensionFilter( "Text Files", "txt" );
 		savebox.addChoosableFileFilter(ft);
+		savebox.setAcceptAllFileFilterUsed(false);
 		int retrival = savebox.showSaveDialog(null);
 		if (retrival == JFileChooser.APPROVE_OPTION) {
 			try { 

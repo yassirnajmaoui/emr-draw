@@ -182,38 +182,37 @@ public class AppController {
 
 	@FXML
 	public void openMenuXMLClicked(ActionEvent a) {
+		
 		System.out.println("Menu File-OpenXML clicked");
 		statusBar.setText("Menu File-OpenXML clicked");
-
-		/*
-		 * this.emrShapes.clearShapes(); this.emrConnexions.clearConnexions();
-		 * emrPane.getChildren().clear(); myOpenStrategy = new OpenXMLStrategy();
-		 * myOpenStrategy.open("src/views/myXMLFile.xml", this.emrShapes,
-		 * this.emrConnexions, this);
-		 */
+		this.emrShapes.clearShapes(); this.emrConnexions.clearConnexions();
+		emrPane.getChildren().clear();
+		myOpenStrategy = new OpenXMLStrategy();
+		myOpenStrategy.open(this.emrShapes, this.emrConnexions, this);
 	}
 
 	@FXML
 	public void openMenuTXTClicked(ActionEvent a) {
+		//---------------------------------------------------
 		System.out.println("Menu File-OpenTXT clicked");
 		statusBar.setText("Menu File-OpenTXT clicked");
-
+		//---------------------------------------------------
 		this.emrShapes.clearShapes();
 		this.emrConnexions.clearConnexions();
 		emrPane.getChildren().clear();
-		
+		//---------------------------------------------------
 		myOpenStrategy = new OpenTextStrategy();
 		myOpenStrategy.open(this.emrShapes, this.emrConnexions, this);
 	}
 
 	@FXML
 	public void saveMenuXMLClicked(ActionEvent e) {
-		/*
-		 * System.out.println("Menu File-save clicked");
-		 * statusBar.setText("Menu File-save clicked"); mySaveStrategy = new
-		 * SaveXMLStrategy(); mySaveStrategy.save("src/views/myXMLFile.xml", emrShapes,
-		 * emrConnexions);
-		 */	 
+		
+	  System.out.println("Menu File-save clicked");
+	  statusBar.setText("Menu File-save clicked");
+	  mySaveStrategy = new SaveXMLStrategy(); 
+	  mySaveStrategy.save(emrShapes, emrConnexions);
+		 	 
 	}
 
 	@FXML
