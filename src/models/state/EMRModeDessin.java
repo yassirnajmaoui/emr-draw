@@ -1,4 +1,4 @@
-package controllers.state;
+package models.state;
 
 import controllers.AppController;
 import javafx.scene.input.MouseEvent;

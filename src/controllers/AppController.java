@@ -1,8 +1,9 @@
 package controllers;
 
-import controllers.state.EMRMode;
-import controllers.state.EMRModeConnexion;
-import controllers.state.EMRModeDessin;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -17,16 +18,23 @@ import javafx.scene.shape.Rectangle;
 import models.EMRConnexion;
 import models.EMRShape;
 import models.EMRShapeFactory;
-import models.file.strategy.FileStrategy;
-import models.file.strategy.TXTStrategy;
-import models.file.strategy.XMLStrategy;
+import models.file.strategy.OpenStrategy;
+import models.file.strategy.OpenTextStrategy;
+import models.file.strategy.OpenXMLStrategy;
+import models.file.strategy.SaveStrategy;
+import models.file.strategy.SaveTextStrategy;
+import models.file.strategy.SaveXMLStrategy;
 import models.iterator.ConnexionContainer;
 import models.iterator.ShapeContainer;
+import models.state.EMRMode;
+import models.state.EMRModeConnexion;
+import models.state.EMRModeDessin;
 
 public class AppController {
 
 	static EMRMode mode;
-	public FileStrategy myStrategy;
+	public SaveStrategy mySaveStrategy;
+	public OpenStrategy myOpenStrategy;
 	public ShapeContainer emrShapes;
 	public ConnexionContainer emrConnexions;
 
@@ -177,11 +185,12 @@ public class AppController {
 		System.out.println("Menu File-OpenXML clicked");
 		statusBar.setText("Menu File-OpenXML clicked");
 
-		this.emrShapes.clearShapes();
-		this.emrConnexions.clearConnexions();
-		emrPane.getChildren().clear();
-		myStrategy = new XMLStrategy();
-		myStrategy.openFile("src/views/myXMLFile.xml", this.emrShapes, this.emrConnexions, this);
+		/*
+		 * this.emrShapes.clearShapes(); this.emrConnexions.clearConnexions();
+		 * emrPane.getChildren().clear(); myOpenStrategy = new OpenXMLStrategy();
+		 * myOpenStrategy.open("src/views/myXMLFile.xml", this.emrShapes,
+		 * this.emrConnexions, this);
+		 */
 	}
 
 	@FXML
@@ -192,24 +201,30 @@ public class AppController {
 		this.emrShapes.clearShapes();
 		this.emrConnexions.clearConnexions();
 		emrPane.getChildren().clear();
-		myStrategy = new TXTStrategy();
-		myStrategy.openFile("src/views/myTXTFile.txt", this.emrShapes, this.emrConnexions, this);
+		
+		myOpenStrategy = new OpenTextStrategy();
+		myOpenStrategy.open(this.emrShapes, this.emrConnexions, this);
 	}
 
 	@FXML
 	public void saveMenuXMLClicked(ActionEvent e) {
-		System.out.println("Menu File-save clicked");
-		statusBar.setText("Menu File-save clicked");
-		myStrategy = new XMLStrategy();
-		myStrategy.saveFile("src/views/myXMLFile.xml", emrShapes, emrConnexions);
+		/*
+		 * System.out.println("Menu File-save clicked");
+		 * statusBar.setText("Menu File-save clicked"); mySaveStrategy = new
+		 * SaveXMLStrategy(); mySaveStrategy.save("src/views/myXMLFile.xml", emrShapes,
+		 * emrConnexions);
+		 */	 
 	}
 
 	@FXML
 	public void saveMenuTXTClicked(ActionEvent e) {
-		System.out.println("Menu File-save clicked");
-		statusBar.setText("Menu File-save clicked");
-		myStrategy = new TXTStrategy();
-		myStrategy.saveFile("src/views/myTXTFile.txt", emrShapes, emrConnexions);
+		//---------------------------------------------------
+		System.out.println("Menu File-save-saveTXT clicked");
+		statusBar.setText("Menu File-save-saveTXT clicked");
+		//---------------------------------------------------
+		mySaveStrategy = new SaveTextStrategy();
+		mySaveStrategy.save(emrShapes, emrConnexions);
+		//---------------------------------------------------
 	}
 
 	@FXML

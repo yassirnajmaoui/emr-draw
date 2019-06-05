@@ -12,7 +12,7 @@ public class EMRApplication extends Application {
 
 		// Start the JavaFX application by calling launch().
 		launch(args);
-	}
+	} 
 
 	// Override the start() method.
 	public void start(Stage primaryStage) {
