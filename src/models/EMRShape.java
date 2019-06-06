@@ -56,7 +56,7 @@ public class EMRShape {
 			return;
 		}
 		this.identifier = id;
-		a.emrPane.getChildren().add(this.shape);
+		a.getEmrPane().getChildren().add(this.shape);
 	}
 
 	public double getX() {

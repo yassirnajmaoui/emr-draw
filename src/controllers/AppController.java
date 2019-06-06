@@ -26,9 +26,9 @@ import models.iterator.ShapeContainer;
 public class AppController {
 
 	static EMRMode mode;
-	public FileStrategy myStrategy;
-	public ShapeContainer emrShapes;
-	public ConnexionContainer emrConnexions;
+	private FileStrategy myStrategy;
+	private ShapeContainer emrShapes;
+	private ConnexionContainer emrConnexions;
 
 	public EMRMode getMode() {
 		if (mode == null)
@@ -37,39 +37,39 @@ public class AppController {
 	}
 	
 	@FXML
-	public Path emrFlecheNoire; // Shape #1
+	private Path emrFlecheNoire; // Shape #1
 	@FXML
-	public Ellipse emrEllipse; // Shape #6
+	private Ellipse emrEllipse; // Shape #6
 	@FXML
-	public Path emrTrapezeDiago; // Shape #7
+	private Path emrTrapezeDiago; // Shape #7
 	@FXML
-	public Polygon emrTrapeze; // Shape #8
+	private Polygon emrTrapeze; // Shape #8
 	@FXML
-	public Path emrDoubleTrapeze; // Shape #9
+	private Path emrDoubleTrapeze; // Shape #9
 	@FXML
-	public Polygon emrTrapezePlein; // Shape #10
+	private Polygon emrTrapezePlein; // Shape #10
 	@FXML
-	public Polygon emrHexagon; // Shape #11
+	private Polygon emrHexagon; // Shape #11
 	@FXML
-	public Path emrTripleCarree; // Shape #12
+	private Path emrTripleCarree; // Shape #12
 	@FXML
-	public Circle emrCircle; // Shape #13
+	private Circle emrCircle; // Shape #13
 	@FXML
-	public Rectangle emrSquare; // Shape #14
+	private Rectangle emrSquare; // Shape #14
 	@FXML
-	public Path emrRectangleDiago; // Shape #15
+	private Path emrRectangleDiago; // Shape #15
 	@FXML
-	public Path emrDoubleCercle; // Shape #16
+	private Path emrDoubleCercle; // Shape #16
 	@FXML
-	public Label statusBar;
+	private Label statusBar;
 	@FXML
-	public Button connexionBtn;
+	private Button connexionBtn;
 	@FXML
-	public Button dessinBtn;
+	private Button dessinBtn;
 	@FXML
-	public Pane emrPane;
+	private Pane emrPane;
 	@FXML
-	public GridPane gridPalette;
+	private GridPane gridPalette;
 
 
 	public AppController() {
@@ -235,5 +235,109 @@ public class AppController {
 		System.out.println("Menu Help-About clicked");
 		statusBar.setText("Menu Help-About clicked");
 		System.out.println(emrShapes.toString()); // Temporaire
+	}
+
+	public Pane getEmrPane() {
+		return emrPane;
+	}
+
+	public void setEmrPane(Pane emrPane) {
+		this.emrPane = emrPane;
+	}
+
+	public Rectangle getEmrSquare() {
+		return emrSquare;
+	}
+
+	public void setEmrSquare(Rectangle emrSquare) {
+		this.emrSquare = emrSquare;
+	}
+
+	public Circle getEmrCircle() {
+		return emrCircle;
+	}
+
+	public void setEmrCircle(Circle emrCircle) {
+		this.emrCircle = emrCircle;
+	}
+
+	public Ellipse getEmrEllipse() {
+		return emrEllipse;
+	}
+
+	public void setEmrEllipse(Ellipse emrEllipse) {
+		this.emrEllipse = emrEllipse;
+	}
+
+	public Polygon getEmrHexagon() {
+		return emrHexagon;
+	}
+
+	public void setEmrHexagon(Polygon emrHexagon) {
+		this.emrHexagon = emrHexagon;
+	}
+
+	public Polygon getEmrTrapeze() {
+		return emrTrapeze;
+	}
+
+	public void setEmrTrapeze(Polygon emrTrapeze) {
+		this.emrTrapeze = emrTrapeze;
+	}
+
+	public Polygon getEmrTrapezePlein() {
+		return emrTrapezePlein;
+	}
+
+	public void setEmrTrapezePlein(Polygon emrTrapezePlein) {
+		this.emrTrapezePlein = emrTrapezePlein;
+	}
+
+	public Path getEmrTrapezeDiago() {
+		return emrTrapezeDiago;
+	}
+
+	public void setEmrTrapezeDiago(Path emrTrapezeDiago) {
+		this.emrTrapezeDiago = emrTrapezeDiago;
+	}
+
+	public Path getEmrRectangleDiago() {
+		return emrRectangleDiago;
+	}
+
+	public void setEmrRectangleDiago(Path emrRectangleDiago) {
+		this.emrRectangleDiago = emrRectangleDiago;
+	}
+
+	public Path getEmrFlecheNoire() {
+		return emrFlecheNoire;
+	}
+
+	public void setEmrFlecheNoire(Path emrFlecheNoire) {
+		this.emrFlecheNoire = emrFlecheNoire;
+	}
+
+	public Path getEmrTripleCarree() {
+		return emrTripleCarree;
+	}
+
+	public void setEmrTripleCarree(Path emrTripleCarree) {
+		this.emrTripleCarree = emrTripleCarree;
+	}
+
+	public Path getEmrDoubleTrapeze() {
+		return emrDoubleTrapeze;
+	}
+
+	public void setEmrDoubleTrapeze(Path emrDoubleTrapeze) {
+		this.emrDoubleTrapeze = emrDoubleTrapeze;
+	}
+
+	public Path getEmrDoubleCercle() {
+		return emrDoubleCercle;
+	}
+
+	public void setEmrDoubleCercle(Path emrDoubleCercle) {
+		this.emrDoubleCercle = emrDoubleCercle;
 	}
 }
