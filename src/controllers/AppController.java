@@ -32,14 +32,11 @@ import models.state.EMRModeDessin;
 
 public class AppController {
 
-	static EMRMode mode;
-	private FileStrategy myStrategy;
+	private EMRMode mode;
 	private ShapeContainer emrShapes;
 	private ConnexionContainer emrConnexions;
-	public SaveStrategy mySaveStrategy;
-	public OpenStrategy myOpenStrategy;
-	public ShapeContainer emrShapes;
-	public ConnexionContainer emrConnexions;
+	private SaveStrategy mySaveStrategy;
+	private OpenStrategy myOpenStrategy;
 
 	public EMRMode getMode() {
 		if (mode == null)
