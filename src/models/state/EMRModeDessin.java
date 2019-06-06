@@ -18,15 +18,15 @@ public class EMRModeDessin implements EMRMode {
 
 	@Override
 	public void handleDragWhile(MouseEvent t, AppController a) {
-		double offsetX = t.getSceneX() - EMRShapeFactory.getOrgSceneX();
-		double offsetY = t.getSceneY() - EMRShapeFactory.getOrgSceneY();
+		double offsetX = t.getSceneX() - a.getOrgSceneX();
+		double offsetY = t.getSceneY() - a.getOrgSceneY();
 
 		Shape c = (Shape) (t.getSource());
 
 		c.setTranslateX(c.getTranslateX()+offsetX);
 		c.setTranslateY(c.getTranslateY()+offsetY);
-		EMRShapeFactory.setOrgSceneX(t.getSceneX());
-		EMRShapeFactory.setOrgSceneY(t.getSceneY());
+		a.setOrgSceneX(t.getSceneX());
+		a.setOrgSceneY(t.getSceneY());
 		//System.out.println(c.hashCode());
 	}
 	  

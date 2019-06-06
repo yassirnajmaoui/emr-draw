@@ -32,6 +32,8 @@ import models.state.EMRModeDessin;
 
 public class AppController {
 
+	private double orgSceneX, orgSceneY;
+	
 	private EMRMode mode;
 	private ShapeContainer emrShapes;
 	private ConnexionContainer emrConnexions;
@@ -353,5 +355,21 @@ public class AppController {
 
 	public void setEmrDoubleCercle(Path emrDoubleCercle) {
 		this.emrDoubleCercle = emrDoubleCercle;
+	}
+
+	public double getOrgSceneY() {
+		return orgSceneY;
+	}
+
+	public void setOrgSceneY(double orgSceneY) {
+		this.orgSceneY = orgSceneY;
+	}
+
+	public double getOrgSceneX() {
+		return orgSceneX;
+	}
+
+	public void setOrgSceneX(double orgSceneX) {
+		this.orgSceneX = orgSceneX;
 	}
 }

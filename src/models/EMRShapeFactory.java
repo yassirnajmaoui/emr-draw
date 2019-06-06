@@ -17,8 +17,6 @@ import javafx.scene.shape.Shape;
 //----------------------------------------------------
 public class EMRShapeFactory {
 
-	private static double orgSceneX, orgSceneY;
-	private static boolean dragging;
 
 	public static final String LINE_ID = "connexion";
 	public static final String SHAPES_XML_ID = "shapes";
@@ -179,8 +177,8 @@ public class EMRShapeFactory {
 		n.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {
-			      orgSceneX = t.getSceneX();
-			      orgSceneY = t.getSceneY();
+			      a.setOrgSceneX(t.getSceneX());
+			      a.setOrgSceneY(t.getSceneY());
 
 			      Shape c = (Shape) (t.getSource());
 			      c.toFront();
@@ -199,29 +197,5 @@ public class EMRShapeFactory {
 			}
 		});
 	}
-
-	public static boolean isDragging() {
-		return dragging;
-	}
-	public static void setDragging(boolean b) {
-		dragging = b;
-	}
-
-	public static double getOrgSceneX() {
-		return orgSceneX;
-	}
-
-	public static void setOrgSceneX(double orgSceneX) {
-		EMRShapeFactory.orgSceneX = orgSceneX;
-	}
-
-	public static double getOrgSceneY() {
-		return orgSceneY;
-	}
-
-	public static void setOrgSceneY(double orgSceneY) {
-		EMRShapeFactory.orgSceneY = orgSceneY;
-	}
-
 	
 }
