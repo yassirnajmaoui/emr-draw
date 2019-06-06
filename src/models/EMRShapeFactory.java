@@ -48,17 +48,17 @@ public class EMRShapeFactory {
 	public static final String DOUBLECERCLE_ID = "doublecercle"; // Shape #16
 	
 	public static Circle createCircle(double x, double y, AppController a) {
-		Circle circle = new Circle(a.emrCircle.getRadius());
+		Circle circle = new Circle(a.getEmrCircle().getRadius());
 		circle.setTranslateX(x);
 		circle.setTranslateY(y);
-		circle.setStroke(a.emrCircle.getStroke());
-		circle.setFill(a.emrCircle.getFill());
+		circle.setStroke(a.getEmrCircle().getStroke());
+		circle.setFill(a.getEmrCircle().getFill());
 		manageEvents(circle,a);
 		return circle;
 	}
 	
 	public static Rectangle createRect(double x, double y, AppController a) {
-		Rectangle rectangle = new Rectangle(a.emrSquare.getWidth(), a.emrSquare.getHeight());
+		Rectangle rectangle = new Rectangle(a.getEmrSquare().getWidth(), a.getEmrSquare().getHeight());
 		rectangle.setTranslateX(x);
 		rectangle.setTranslateY(y);
 		rectangle.setFill(Color.GOLD);
@@ -68,107 +68,107 @@ public class EMRShapeFactory {
 	}
 	
 	public static Ellipse createEllipse(double x, double y, AppController a) {
-		Ellipse el = new Ellipse(a.emrEllipse.getRadiusX(), a.emrEllipse.getRadiusY());
+		Ellipse el = new Ellipse(a.getEmrEllipse().getRadiusX(), a.getEmrEllipse().getRadiusY());
 		el.setTranslateX(x);
 		el.setTranslateY(y);
-		el.setFill(a.emrEllipse.getFill());
-		el.setStroke(a.emrEllipse.getStroke());
+		el.setFill(a.getEmrEllipse().getFill());
+		el.setStroke(a.getEmrEllipse().getStroke());
 		manageEvents(el,a);
 		return el;
 	}
 	public static Polygon createHexagon(double x, double y, AppController a) {
 		Polygon poly = new Polygon();
-		poly.getPoints().addAll(a.emrHexagon.getPoints());
+		poly.getPoints().addAll(a.getEmrHexagon().getPoints());
 		poly.setTranslateX(x);
 		poly.setTranslateY(y);
-		poly.setStroke(a.emrHexagon.getStroke());
-		poly.setFill(a.emrHexagon.getFill());
+		poly.setStroke(a.getEmrHexagon().getStroke());
+		poly.setFill(a.getEmrHexagon().getFill());
 		manageEvents(poly,a);
 		return poly;
 	}
 	public static Polygon createTrapeze(double x, double y, AppController a) {
 		Polygon poly = new Polygon();
-		poly.getPoints().addAll(a.emrTrapeze.getPoints());
+		poly.getPoints().addAll(a.getEmrTrapeze().getPoints());
 		poly.setTranslateX(x);
 		poly.setTranslateY(y);
-		poly.setStroke(a.emrTrapeze.getStroke());
-		poly.setFill(a.emrTrapeze.getFill());
+		poly.setStroke(a.getEmrTrapeze().getStroke());
+		poly.setFill(a.getEmrTrapeze().getFill());
 		manageEvents(poly,a);
 		return poly;
 	}
 	public static Polygon createTrapezePlein(double x, double y, AppController a) {
 		Polygon poly = new Polygon();
-		poly.getPoints().addAll(a.emrTrapezePlein.getPoints());
+		poly.getPoints().addAll(a.getEmrTrapezePlein().getPoints());
 		poly.setTranslateX(x);
 		poly.setTranslateY(y);
-		poly.setStroke(a.emrTrapezePlein.getStroke());
-		poly.setFill(a.emrTrapezePlein.getFill());
+		poly.setStroke(a.getEmrTrapezePlein().getStroke());
+		poly.setFill(a.getEmrTrapezePlein().getFill());
 		manageEvents(poly,a);
 		return poly;
 	}
 	
 	public static Path createTrapezeDiago(double x, double y, AppController a) {
-		Path path = new Path(a.emrTrapezeDiago.getElements());
-		path.setFillRule(a.emrTrapezeDiago.getFillRule());
+		Path path = new Path(a.getEmrTrapezeDiago().getElements());
+		path.setFillRule(a.getEmrTrapezeDiago().getFillRule());
 		path.setTranslateX(x);
 		path.setTranslateY(y);
-		path.setStroke(a.emrTrapezeDiago.getStroke());
-		path.setFill(a.emrTrapezeDiago.getFill());
+		path.setStroke(a.getEmrTrapezeDiago().getStroke());
+		path.setFill(a.getEmrTrapezeDiago().getFill());
 		manageEvents(path,a);
 		return path;
 	}
 	
 	public static Path createRectangleDiago(double x, double y, AppController a) {
-		Path path = new Path(a.emrRectangleDiago.getElements());
-		path.setFillRule(a.emrRectangleDiago.getFillRule());
+		Path path = new Path(a.getEmrRectangleDiago().getElements());
+		path.setFillRule(a.getEmrRectangleDiago().getFillRule());
 		path.setTranslateX(x);
 		path.setTranslateY(y);
-		path.setStroke(a.emrRectangleDiago.getStroke());
-		path.setFill(a.emrRectangleDiago.getFill());
+		path.setStroke(a.getEmrRectangleDiago().getStroke());
+		path.setFill(a.getEmrRectangleDiago().getFill());
 		manageEvents(path,a);
 		return path;
 	}
 	
 	public static Path createFlecheNoire(double x, double y, AppController a) {
-		Path path = new Path(a.emrFlecheNoire.getElements());
-		path.setFillRule(a.emrFlecheNoire.getFillRule());
+		Path path = new Path(a.getEmrFlecheNoire().getElements());
+		path.setFillRule(a.getEmrFlecheNoire().getFillRule());
 		path.setTranslateX(x);
 		path.setTranslateY(y);
-		path.setStroke(a.emrFlecheNoire.getStroke());
-		path.setFill(a.emrFlecheNoire.getFill());
+		path.setStroke(a.getEmrFlecheNoire().getStroke());
+		path.setFill(a.getEmrFlecheNoire().getFill());
 		manageEvents(path,a);
 		return path;
 	}
 	
 	public static Path createTripleCarree(double x, double y, AppController a) {
-		Path path = new Path(a.emrTripleCarree.getElements());
-		path.setFillRule(a.emrTripleCarree.getFillRule());
+		Path path = new Path(a.getEmrTripleCarree().getElements());
+		path.setFillRule(a.getEmrTripleCarree().getFillRule());
 		path.setTranslateX(x);
 		path.setTranslateY(y);
-		path.setStroke(a.emrTripleCarree.getStroke());
-		path.setFill(a.emrTripleCarree.getFill());
+		path.setStroke(a.getEmrTripleCarree().getStroke());
+		path.setFill(a.getEmrTripleCarree().getFill());
 		manageEvents(path,a);
 		return path;
 	}
 	
 	public static Path createDoubleTrapeze(double x, double y, AppController a) {
-		Path path = new Path(a.emrDoubleTrapeze.getElements());
-		path.setFillRule(a.emrDoubleTrapeze.getFillRule());
+		Path path = new Path(a.getEmrDoubleTrapeze().getElements());
+		path.setFillRule(a.getEmrDoubleTrapeze().getFillRule());
 		path.setTranslateX(x);
 		path.setTranslateY(y);
-		path.setStroke(a.emrDoubleTrapeze.getStroke());
-		path.setFill(a.emrDoubleTrapeze.getFill());
+		path.setStroke(a.getEmrDoubleTrapeze().getStroke());
+		path.setFill(a.getEmrDoubleTrapeze().getFill());
 		manageEvents(path,a);
 		return path;
 	}
 	
 	public static Path createDoubleCercle(double x, double y, AppController a) {
-		Path path = new Path(a.emrDoubleCercle.getElements());
-		path.setFillRule(a.emrDoubleCercle.getFillRule());
+		Path path = new Path(a.getEmrDoubleCercle().getElements());
+		path.setFillRule(a.getEmrDoubleCercle().getFillRule());
 		path.setTranslateX(x);
 		path.setTranslateY(y);
-		path.setStroke(a.emrDoubleCercle.getStroke());
-		path.setFill(a.emrDoubleCercle.getFill());
+		path.setStroke(a.getEmrDoubleCercle().getStroke());
+		path.setFill(a.getEmrDoubleCercle().getFill());
 		manageEvents(path,a);
 		return path;
 	}

@@ -16,7 +16,7 @@ public class EMRConnexion {
 		startShape=s1;
 		endShape=s2;
 		this.line = connect(s1,s2);
-		a.emrPane.getChildren().add(this.line);
+		a.getEmrPane().getChildren().add(this.line);
 	}
 
 	public Shape getStartShape() {
